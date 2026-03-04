@@ -3283,42 +3283,76 @@ body {
 
   <style>
   /* ── MOCKUP SHARED ── */
-  .mockup-grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-bottom:32px; }
-  .mockup-grid-3 { display:grid; grid-template-columns:1fr; gap:32px; margin-bottom:32px; }
-  .mockup-grid-4 { display:grid; grid-template-columns:1fr; gap:32px; margin-bottom:32px; }
+  .mockup-grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:28px; }
+  .mockup-grid-3 { display:grid; grid-template-columns:1fr; gap:24px; margin-bottom:28px; }
+  .mockup-grid-4 { display:grid; grid-template-columns:1fr; gap:24px; margin-bottom:28px; }
 
   .mockup-card {
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 8px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 12px;
     overflow: hidden;
     display: grid;
-    grid-template-columns: 1fr 280px;
+    grid-template-columns: minmax(0, 1fr) 260px;
     page-break-inside: avoid;
     break-inside: avoid;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+    position: relative;
+  }
+  .mockup-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(226,184,74,0.55), transparent);
   }
 
   .mockup-stage {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 48px 40px;
-    min-height: 240px;
+    padding: 44px 36px;
+    min-height: 250px;
     position: relative;
     overflow: hidden;
-    border-right: 1px solid rgba(255,255,255,0.06);
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+  .mockup-stage::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.05), transparent 55%);
+    pointer-events: none;
   }
 
   .mockup-caption {
-    padding: 32px 28px;
+    padding: 26px 24px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
+    background: linear-gradient(180deg, rgba(18,24,26,0.4), rgba(18,24,26,0.25));
+    border-left: 1px solid rgba(255,255,255,0.08);
   }
 
-  .mockup-caption-name { font-family: var(--serif); font-size: 16px; font-weight: 500; color: var(--white); letter-spacing: 0.02em; margin-bottom: 4px; }
-  .mockup-caption-spec { font-size: 11px; color: var(--steel); font-family: var(--mono); letter-spacing: 0.08em; }
+  .mockup-caption-name { font-family: var(--serif); font-size: 15px; font-weight: 500; color: var(--white); letter-spacing: 0.025em; margin-bottom: 2px; line-height: 1.25; }
+  .mockup-caption-spec { font-size: 10px; color: rgba(133,181,194,0.95); font-family: var(--mono); letter-spacing: 0.14em; text-transform: uppercase; }
+
+  @media (max-width: 1200px) {
+    .mockup-card {
+      grid-template-columns: 1fr;
+    }
+    .mockup-stage {
+      border-right: none;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .mockup-caption {
+      border-left: none;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+  }
 
   /* ── PEN ── */
   .pen-wrap { position:relative; width:280px; height:40px; }
@@ -5342,6 +5376,10 @@ body {
 
 /* Mockup cards */
 [data-theme="light"] .mockup-card   { background: #FFFFFF; border: 1px solid rgba(26,58,74,0.10); box-shadow: 0 2px 12px rgba(26,58,74,0.08); }
+[data-theme="light"] .mockup-card::before { background: linear-gradient(to right, transparent, rgba(184,136,26,0.55), transparent); }
+[data-theme="light"] .mockup-stage { border-right-color: rgba(26,58,74,0.10); }
+[data-theme="light"] .mockup-stage::after { background: radial-gradient(circle at 50% 0%, rgba(26,58,74,0.06), transparent 55%); }
+[data-theme="light"] .mockup-caption { background: linear-gradient(180deg, #FFFFFF, #F7FBFC); border-left-color: rgba(26,58,74,0.10); }
 [data-theme="light"] .mockup-caption-name { color: #12181A; }
 [data-theme="light"] .mockup-caption-spec { color: #4A9BAD; }
 
@@ -5351,6 +5389,16 @@ body {
 [data-theme="light"] .spec-table td:first-child { color: #2A5C6E; }
 [data-theme="light"] .spec-table td:last-child  { color: #12181A; }
 [data-theme="light"] .spec-table td { border-bottom-color: rgba(26,58,74,0.08); }
+[data-theme="light"] .vc-face-label { color: rgba(26,58,74,0.55); }
+[data-theme="light"] .vc-print-specs { background: rgba(26,58,74,0.07); }
+[data-theme="light"] .vc-spec-col { background: #FFFFFF; }
+[data-theme="light"] .vc-spec-row { border-bottom-color: rgba(26,58,74,0.10); }
+[data-theme="light"] .vc-spec-k { color: #2A5C6E; }
+[data-theme="light"] .vc-spec-v { color: #12181A; }
+[data-theme="light"] .vc-contact-light,
+[data-theme="light"] .vc-contact-light a { color: #1A3A4A; }
+[data-theme="light"] .vc-info-dk,
+[data-theme="light"] .vc-info-dk a { color: #1A3A4A; }
 
 /* ── DIGITAL GUIDELINES ── */
 [data-theme="light"] .btn-primary   { background: #1A3A4A; color: #FFFFFF; }
@@ -5416,12 +5464,17 @@ body {
 [data-theme="light"] .login-note-txt { color: #2A5C6E; }
 [data-theme="light"] .login-or-text { color: rgba(26,58,74,0.4); }
 [data-theme="light"] .login-or-line { background: rgba(26,58,74,0.10); }
+[data-theme="light"] .login-input[style] { color: #2A5C6E !important; }
+[data-theme="light"] .login-input a { color: inherit !important; }
 
 /* ── FOOTER ── */
 [data-theme="light"] .brand-footer  { background: #E0EEF2; border-top-color: rgba(26,58,74,0.10); }
 [data-theme="light"] .footer-wm     { color: #12181A; }
 [data-theme="light"] .footer-meta   { color: #4A9BAD; }
 [data-theme="light"] .footer-meta span { color: #4A9BAD; }
+
+/* Keep Cloudflare-protected email text readable in each context */
+.__cf_email__ { color: inherit; text-decoration: none; }
 
 </style>
 
@@ -7123,42 +7176,76 @@ body {
 
   <style>
   /* ── MOCKUP SHARED ── */
-  .mockup-grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-bottom:32px; }
-  .mockup-grid-3 { display:grid; grid-template-columns:1fr; gap:32px; margin-bottom:32px; }
-  .mockup-grid-4 { display:grid; grid-template-columns:1fr; gap:32px; margin-bottom:32px; }
+  .mockup-grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:28px; }
+  .mockup-grid-3 { display:grid; grid-template-columns:1fr; gap:24px; margin-bottom:28px; }
+  .mockup-grid-4 { display:grid; grid-template-columns:1fr; gap:24px; margin-bottom:28px; }
 
   .mockup-card {
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 8px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 12px;
     overflow: hidden;
     display: grid;
-    grid-template-columns: 1fr 280px;
+    grid-template-columns: minmax(0, 1fr) 260px;
     page-break-inside: avoid;
     break-inside: avoid;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+    position: relative;
+  }
+  .mockup-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(226,184,74,0.55), transparent);
   }
 
   .mockup-stage {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 48px 40px;
-    min-height: 240px;
+    padding: 44px 36px;
+    min-height: 250px;
     position: relative;
     overflow: hidden;
-    border-right: 1px solid rgba(255,255,255,0.06);
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+  .mockup-stage::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.05), transparent 55%);
+    pointer-events: none;
   }
 
   .mockup-caption {
-    padding: 32px 28px;
+    padding: 26px 24px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
+    background: linear-gradient(180deg, rgba(18,24,26,0.4), rgba(18,24,26,0.25));
+    border-left: 1px solid rgba(255,255,255,0.08);
   }
 
-  .mockup-caption-name { font-family: var(--serif); font-size: 16px; font-weight: 500; color: var(--white); letter-spacing: 0.02em; margin-bottom: 4px; }
-  .mockup-caption-spec { font-size: 11px; color: var(--steel); font-family: var(--mono); letter-spacing: 0.08em; }
+  .mockup-caption-name { font-family: var(--serif); font-size: 15px; font-weight: 500; color: var(--white); letter-spacing: 0.025em; margin-bottom: 2px; line-height: 1.25; }
+  .mockup-caption-spec { font-size: 10px; color: rgba(133,181,194,0.95); font-family: var(--mono); letter-spacing: 0.14em; text-transform: uppercase; }
+
+  @media (max-width: 1200px) {
+    .mockup-card {
+      grid-template-columns: 1fr;
+    }
+    .mockup-stage {
+      border-right: none;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .mockup-caption {
+      border-left: none;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+  }
 
   /* ── PEN ── */
   .pen-wrap { position:relative; width:280px; height:40px; }
