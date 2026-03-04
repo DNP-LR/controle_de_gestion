@@ -231,7 +231,7 @@ body {
 }
 
 .page-intro {
-  font-size: 15px;
+  font-size: 17px;
   color: var(--steel);
   line-height: 1.85;
   max-width: 640px;
@@ -3283,20 +3283,20 @@ body {
 
   <style>
   /* ── MOCKUP SHARED ── */
-  .mockup-grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:28px; }
-  .mockup-grid-3 { display:grid; grid-template-columns:1fr; gap:24px; margin-bottom:28px; }
-  .mockup-grid-4 { display:grid; grid-template-columns:1fr; gap:24px; margin-bottom:28px; }
+  .mockup-grid-2 { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:20px; margin-bottom:24px; }
+  .mockup-grid-3 { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:20px; margin-bottom:24px; }
+  .mockup-grid-4 { display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:20px; margin-bottom:24px; }
 
   .mockup-card {
     background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
     border: 1px solid rgba(255,255,255,0.09);
-    border-radius: 12px;
+    border-radius: 10px;
     overflow: hidden;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 260px;
+    display: flex;
+    flex-direction: column;
     page-break-inside: avoid;
     break-inside: avoid;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.24);
     position: relative;
   }
   .mockup-card::before {
@@ -3313,11 +3313,24 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 44px 36px;
-    min-height: 250px;
+    padding: 28px 22px;
+    min-height: 210px;
     position: relative;
     overflow: hidden;
-    border-right: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .mockup-stage::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 12px;
+    transform: translateX(-50%);
+    width: min(72%, 260px);
+    height: 16px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.30), transparent 72%);
+    filter: blur(1px);
+    pointer-events: none;
   }
   .mockup-stage::after {
     content: "";
@@ -3328,30 +3341,43 @@ body {
   }
 
   .mockup-caption {
-    padding: 26px 24px;
+    padding: 14px 14px 16px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 8px;
-    background: linear-gradient(180deg, rgba(18,24,26,0.4), rgba(18,24,26,0.25));
-    border-left: 1px solid rgba(255,255,255,0.08);
+    background: linear-gradient(180deg, rgba(9,16,22,0.9), rgba(9,16,22,0.84));
+    border-top: 1px solid rgba(255,255,255,0.08);
   }
 
-  .mockup-caption-name { font-family: var(--serif); font-size: 15px; font-weight: 500; color: var(--white); letter-spacing: 0.025em; margin-bottom: 2px; line-height: 1.25; }
-  .mockup-caption-spec { font-size: 10px; color: rgba(133,181,194,0.95); font-family: var(--mono); letter-spacing: 0.14em; text-transform: uppercase; }
+  .mockup-caption-name { font-family: var(--serif); font-size: 14px; font-weight: 500; color: var(--white); letter-spacing: 0.02em; margin-bottom: 2px; line-height: 1.3; }
+  .mockup-caption-spec { font-size: 9px; color: rgba(184,216,226,0.9); font-family: var(--mono); letter-spacing: 0.12em; text-transform: uppercase; }
+  .mockup-caption-tag {
+    display: inline-block;
+    width: fit-content;
+    font-family: var(--mono);
+    font-size: 8px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(226,184,74,0.10);
+    border: 1px solid rgba(226,184,74,0.25);
+    padding: 2px 7px;
+    border-radius: 999px;
+    margin-bottom: 4px;
+  }
+  .stage-row-1 { background: radial-gradient(circle at 25% 20%, rgba(74,155,173,0.18), transparent 42%), linear-gradient(155deg,#0C1C28,#163547 60%,#102938); }
+  .stage-row-2 { background: radial-gradient(circle at 78% 18%, rgba(226,184,74,0.16), transparent 45%), linear-gradient(155deg,#EDE3CF,#E3EEF2 62%,#D8E7EC); }
+  .stage-row-3 { background: radial-gradient(circle at 18% 22%, rgba(74,155,173,0.12), transparent 45%), linear-gradient(145deg,#DCEBF0,#E8E3D6 58%,#E9F1F4); }
 
   @media (max-width: 1200px) {
-    .mockup-card {
-      grid-template-columns: 1fr;
-    }
-    .mockup-stage {
-      border-right: none;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .mockup-caption {
-      border-left: none;
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
+    .mockup-grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .mockup-grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 760px) {
+    .mockup-grid-2,
+    .mockup-grid-3,
+    .mockup-grid-4 { grid-template-columns: 1fr; }
   }
 
   /* ── PEN ── */
@@ -3392,8 +3418,9 @@ body {
 
   /* ── NOTEBOOK ── */
   .notebook-wrap {
-    width:160px; height:210px; position:relative;
-    box-shadow: 6px 6px 20px rgba(0,0,0,0.5);
+    width:168px; height:216px; position:relative;
+    transform: perspective(900px) rotateY(-4deg) rotateX(1deg) translateY(-2px);
+    box-shadow: 10px 12px 24px rgba(0,0,0,0.36);
   }
   .notebook-cover {
     width:100%; height:100%; border-radius:3px;
@@ -3425,7 +3452,7 @@ body {
   }
 
   /* ── CUP / MUG ── */
-  .mug-wrap { width:110px; height:130px; position:relative; }
+  .mug-wrap { width:122px; height:146px; position:relative; transform: translateY(-2px); filter: drop-shadow(0 10px 18px rgba(0,0,0,0.3)); }
   .mug-body {
     position:absolute; left:0; top:10px; right:0; bottom:0;
     background:linear-gradient(135deg, #F2F9FC 0%, #E4F2F6 60%, #B8D8E2 100%);
@@ -3466,7 +3493,7 @@ body {
   }
 
   /* ── TOTE BAG ── */
-  .tote-wrap { position:relative; width:130px; height:150px; }
+  .tote-wrap { position:relative; width:140px; height:164px; transform: perspective(900px) rotateY(3deg) translateY(-2px); }
   .tote-body {
     position:absolute; left:10px; right:10px; top:30px; bottom:0;
     background:linear-gradient(160deg, #F6EDD8 0%, #e8dfc8 100%);
@@ -3491,9 +3518,9 @@ body {
 
   /* ── USB / BADGE ── */
   .badge-wrap {
-    width:130px; min-height:180px; position:relative;
+    width:138px; min-height:188px; position:relative;
     background:linear-gradient(160deg, #1A3A4A 0%, #12181A 100%);
-    border-radius:6px;
+    border-radius:10px;
     box-shadow:0 8px 24px rgba(0,0,0,0.5);
     display:flex; flex-direction:column; align-items:center;
     padding:20px 14px 14px;
@@ -3528,7 +3555,8 @@ body {
 
   /* ── ENVELOPE ── */
   .envelope-wrap {
-    width:220px; height:150px; position:relative;
+    width:232px; height:156px; position:relative;
+    transform: translateY(-1px);
   }
   .env-body {
     width:100%; height:100%;
@@ -3579,7 +3607,8 @@ body {
 
   /* ── FOLDER ── */
   .folder-wrap {
-    width:160px; height:210px; position:relative;
+    width:170px; height:220px; position:relative;
+    transform: perspective(900px) rotateY(-3deg) translateY(-2px);
   }
   .folder-body {
     width:100%; height:100%;
@@ -3637,7 +3666,7 @@ body {
   }
 
   /* ── USB KEY ── */
-  .usb-wrap { position:relative; width:120px; height:50px; display:flex; align-items:center; }
+  .usb-wrap { position:relative; width:126px; height:54px; display:flex; align-items:center; transform: translateY(-2px); filter: drop-shadow(0 8px 14px rgba(0,0,0,0.3)); }
   .usb-body {
     width:90px; height:36px; border-radius:4px;
     background:linear-gradient(160deg, #1A3A4A 0%, #12181A 100%);
@@ -3856,7 +3885,7 @@ body {
 
     <!-- PEN -->
     <div class="mockup-card">
-      <div class="mockup-stage" style="background:linear-gradient(160deg,#12181A,#1A3A4A); flex-direction:column; gap:16px">
+      <div class="mockup-stage stage-row-1" style="flex-direction:column; gap:16px">
         <div style="font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(133,181,194,0.5)">Executive Pen</div>
         <!-- Pen SVG illustration -->
         <svg width="240" height="48" viewBox="0 0 240 48" fill="none">
@@ -3917,6 +3946,7 @@ body {
         </svg>
       </div>
       <div class="mockup-caption">
+        <span class="mockup-caption-tag">Writing</span>
         <span class="mockup-caption-name">Executive Pen</span>
         <span class="mockup-caption-spec">Forest · Gold clip · Engraved</span>
       </div>
@@ -3924,7 +3954,7 @@ body {
 
     <!-- NOTEBOOK -->
     <div class="mockup-card">
-      <div class="mockup-stage" style="background:linear-gradient(135deg,#F6EDD8,#EEE8D5)">
+      <div class="mockup-stage stage-row-1">
         <div class="notebook-wrap">
           <div class="notebook-cover">
             <div class="notebook-spine"></div>
@@ -3949,6 +3979,7 @@ body {
         </div>
       </div>
       <div class="mockup-caption">
+        <span class="mockup-caption-tag">Writing</span>
         <span class="mockup-caption-name">Hardcover Notebook</span>
         <span class="mockup-caption-spec">A5 · Forest cover · Gold detail</span>
       </div>
@@ -3956,7 +3987,7 @@ body {
 
     <!-- MUG -->
     <div class="mockup-card">
-      <div class="mockup-stage" style="background:linear-gradient(160deg,#E4F2F6,#F6EDD8)">
+      <div class="mockup-stage stage-row-1">
         <div class="mug-wrap">
           <div class="mug-steam">
             <div class="steam-line"></div>
@@ -3981,6 +4012,7 @@ body {
         </div>
       </div>
       <div class="mockup-caption">
+        <span class="mockup-caption-tag">Hospitality</span>
         <span class="mockup-caption-name">Ceramic Mug</span>
         <span class="mockup-caption-spec">Cream glaze · Logo fired print</span>
       </div>
@@ -3992,7 +4024,7 @@ body {
 
     <!-- TOTE BAG -->
     <div class="mockup-card">
-      <div class="mockup-stage" style="background:linear-gradient(160deg,#1A3A4A,#12181A); min-height:220px">
+      <div class="mockup-stage stage-row-2" style="min-height:220px">
         <div class="tote-wrap">
           <div class="tote-handles"></div>
           <div class="tote-body">
@@ -4009,6 +4041,7 @@ body {
         </div>
       </div>
       <div class="mockup-caption">
+        <span class="mockup-caption-tag">Carry</span>
         <span class="mockup-caption-name">Canvas Tote</span>
         <span class="mockup-caption-spec">Natural · Screen print</span>
       </div>
@@ -4016,7 +4049,7 @@ body {
 
     <!-- BADGE / ID CARD -->
     <div class="mockup-card">
-      <div class="mockup-stage" style="background:linear-gradient(160deg,#E4F2F6,#B8D8E2); min-height:220px; flex-direction:column">
+      <div class="mockup-stage stage-row-2" style="min-height:220px; flex-direction:column">
         <!-- Lanyard string -->
         <div style="width:3px;height:28px;background:linear-gradient(to bottom,#E2B84A,#B8881A);border-radius:2px;margin-bottom:0"></div>
         <div style="width:14px;height:6px;background:#B8881A;border-radius:2px;margin-bottom:0"></div>
@@ -4037,6 +4070,7 @@ body {
         </div>
       </div>
       <div class="mockup-caption">
+        <span class="mockup-caption-tag">Identity</span>
         <span class="mockup-caption-name">ID / Access Badge</span>
         <span class="mockup-caption-spec">PVC card · Gold lanyard</span>
       </div>
@@ -4044,7 +4078,7 @@ body {
 
     <!-- PRESENTATION FOLDER -->
     <div class="mockup-card">
-      <div class="mockup-stage" style="background:linear-gradient(160deg,#F6EDD8,#EEE8D5); min-height:220px">
+      <div class="mockup-stage stage-row-2" style="min-height:220px">
         <div class="folder-wrap">
           <div class="folder-body">
             <div class="folder-tab"></div>
@@ -4065,6 +4099,7 @@ body {
         </div>
       </div>
       <div class="mockup-caption">
+        <span class="mockup-caption-tag">Presentation</span>
         <span class="mockup-caption-name">Press Folder</span>
         <span class="mockup-caption-spec">A4 · Matte + Spot UV</span>
       </div>
@@ -4072,7 +4107,7 @@ body {
 
     <!-- ENVELOPE -->
     <div class="mockup-card">
-      <div class="mockup-stage" style="background:linear-gradient(135deg,#E4F2F6,#F6EDD8); min-height:220px">
+      <div class="mockup-stage stage-row-2" style="min-height:220px">
         <div class="envelope-wrap">
           <div class="env-body">
             <div class="env-side-l"></div>
@@ -4094,6 +4129,7 @@ body {
         </div>
       </div>
       <div class="mockup-caption">
+        <span class="mockup-caption-tag">Mailing</span>
         <span class="mockup-caption-name">Official Envelope</span>
         <span class="mockup-caption-spec">C4 · Parchment · Wax seal</span>
       </div>
@@ -4105,7 +4141,7 @@ body {
 
     <!-- USB KEY -->
     <div class="mockup-card">
-      <div class="mockup-stage" style="background:linear-gradient(160deg,#12181A,#1A3A4A)">
+      <div class="mockup-stage stage-row-3">
         <div style="display:flex;align-items:center;gap:4px">
           <div style="width:90px;height:36px;border-radius:6px;background:linear-gradient(160deg,#1A3A4A,#12181A);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.5);position:relative;overflow:hidden">
             <div style="position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(226,184,74,0.04),rgba(226,184,74,0.04) 1px,transparent 1px,transparent 10px)"></div>
@@ -4120,6 +4156,7 @@ body {
         </div>
       </div>
       <div class="mockup-caption">
+        <span class="mockup-caption-tag">Technology</span>
         <span class="mockup-caption-name">USB Key</span>
         <span class="mockup-caption-spec">32GB · Gold connector · Engraved</span>
       </div>
@@ -4127,7 +4164,7 @@ body {
 
     <!-- POSTAGE STAMP (govt style) -->
     <div class="mockup-card">
-      <div class="mockup-stage" style="background:linear-gradient(135deg,#F6EDD8,#e8dfc8)">
+      <div class="mockup-stage stage-row-3">
         <div style="display:flex;flex-direction:column;align-items:center;gap:16px">
           <!-- Stamp -->
           <div style="width:90px;height:108px;background:#F6EDD8;border:1.5px solid rgba(0,0,0,0.12);box-shadow:2px 2px 10px rgba(0,0,0,0.25);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;position:relative;
@@ -4150,6 +4187,7 @@ body {
         </div>
       </div>
       <div class="mockup-caption">
+        <span class="mockup-caption-tag">Authentication</span>
         <span class="mockup-caption-name">Stamp &amp; Wax Seal</span>
         <span class="mockup-caption-spec">Official correspondence</span>
       </div>
@@ -4157,7 +4195,7 @@ body {
 
     <!-- BRANDED REPORT COVER -->
     <div class="mockup-card">
-      <div class="mockup-stage" style="background:linear-gradient(135deg,#E4F2F6,#F6EDD8)">
+      <div class="mockup-stage stage-row-3">
         <div style="width:150px;height:200px;border-radius:3px;box-shadow:5px 5px 20px rgba(0,0,0,0.3);overflow:hidden;position:relative">
           <!-- Report cover -->
           <div style="width:100%;height:100%;background:linear-gradient(160deg,#1A3A4A 0%,#12181A 100%);padding:20px 18px;display:flex;flex-direction:column;justify-content:space-between;position:relative">
@@ -4179,6 +4217,7 @@ body {
         </div>
       </div>
       <div class="mockup-caption">
+        <span class="mockup-caption-tag">Publication</span>
         <span class="mockup-caption-name">Annual Report Cover</span>
         <span class="mockup-caption-spec">A4 · Matte laminate · Gold spine</span>
       </div>
@@ -5377,11 +5416,16 @@ body {
 /* Mockup cards */
 [data-theme="light"] .mockup-card   { background: #FFFFFF; border: 1px solid rgba(26,58,74,0.10); box-shadow: 0 2px 12px rgba(26,58,74,0.08); }
 [data-theme="light"] .mockup-card::before { background: linear-gradient(to right, transparent, rgba(184,136,26,0.55), transparent); }
-[data-theme="light"] .mockup-stage { border-right-color: rgba(26,58,74,0.10); }
+[data-theme="light"] .mockup-stage { border-bottom-color: rgba(26,58,74,0.12); }
+[data-theme="light"] .mockup-stage::before { background: radial-gradient(ellipse at center, rgba(26,58,74,0.24), transparent 72%); }
 [data-theme="light"] .mockup-stage::after { background: radial-gradient(circle at 50% 0%, rgba(26,58,74,0.06), transparent 55%); }
-[data-theme="light"] .mockup-caption { background: linear-gradient(180deg, #FFFFFF, #F7FBFC); border-left-color: rgba(26,58,74,0.10); }
+[data-theme="light"] .mockup-caption { background: linear-gradient(180deg, #FFFFFF, #F7FBFC); border-top-color: rgba(26,58,74,0.12); }
+[data-theme="light"] .mockup-caption-tag { color: #B8881A; background: rgba(184,136,26,0.10); border-color: rgba(184,136,26,0.25); }
 [data-theme="light"] .mockup-caption-name { color: #12181A; }
 [data-theme="light"] .mockup-caption-spec { color: #4A9BAD; }
+[data-theme="light"] .stage-row-1 { background: radial-gradient(circle at 25% 20%, rgba(74,155,173,0.20), transparent 42%), linear-gradient(155deg,#10283A,#174155 60%,#0D2A3C); }
+[data-theme="light"] .stage-row-2 { background: radial-gradient(circle at 78% 18%, rgba(184,136,26,0.16), transparent 45%), linear-gradient(155deg,#F5ECD9,#EAF3F6 62%,#E1EDF1); }
+[data-theme="light"] .stage-row-3 { background: radial-gradient(circle at 18% 22%, rgba(74,155,173,0.14), transparent 45%), linear-gradient(145deg,#E5F0F4,#EFE9DB 58%,#EEF4F6); }
 
 /* Print specs */
 [data-theme="light"] .print-card    { background: #FFFFFF; border-color: rgba(26,58,74,0.10); }
@@ -7176,20 +7220,20 @@ body {
 
   <style>
   /* ── MOCKUP SHARED ── */
-  .mockup-grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:28px; }
-  .mockup-grid-3 { display:grid; grid-template-columns:1fr; gap:24px; margin-bottom:28px; }
-  .mockup-grid-4 { display:grid; grid-template-columns:1fr; gap:24px; margin-bottom:28px; }
+  .mockup-grid-2 { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:20px; margin-bottom:24px; }
+  .mockup-grid-3 { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:20px; margin-bottom:24px; }
+  .mockup-grid-4 { display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:20px; margin-bottom:24px; }
 
   .mockup-card {
     background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
     border: 1px solid rgba(255,255,255,0.09);
-    border-radius: 12px;
+    border-radius: 10px;
     overflow: hidden;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 260px;
+    display: flex;
+    flex-direction: column;
     page-break-inside: avoid;
     break-inside: avoid;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.24);
     position: relative;
   }
   .mockup-card::before {
@@ -7206,11 +7250,24 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 44px 36px;
-    min-height: 250px;
+    padding: 28px 22px;
+    min-height: 210px;
     position: relative;
     overflow: hidden;
-    border-right: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .mockup-stage::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 12px;
+    transform: translateX(-50%);
+    width: min(72%, 260px);
+    height: 16px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.30), transparent 72%);
+    filter: blur(1px);
+    pointer-events: none;
   }
   .mockup-stage::after {
     content: "";
@@ -7221,30 +7278,43 @@ body {
   }
 
   .mockup-caption {
-    padding: 26px 24px;
+    padding: 14px 14px 16px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 8px;
-    background: linear-gradient(180deg, rgba(18,24,26,0.4), rgba(18,24,26,0.25));
-    border-left: 1px solid rgba(255,255,255,0.08);
+    background: linear-gradient(180deg, rgba(9,16,22,0.9), rgba(9,16,22,0.84));
+    border-top: 1px solid rgba(255,255,255,0.08);
   }
 
-  .mockup-caption-name { font-family: var(--serif); font-size: 15px; font-weight: 500; color: var(--white); letter-spacing: 0.025em; margin-bottom: 2px; line-height: 1.25; }
-  .mockup-caption-spec { font-size: 10px; color: rgba(133,181,194,0.95); font-family: var(--mono); letter-spacing: 0.14em; text-transform: uppercase; }
+  .mockup-caption-name { font-family: var(--serif); font-size: 14px; font-weight: 500; color: var(--white); letter-spacing: 0.02em; margin-bottom: 2px; line-height: 1.3; }
+  .mockup-caption-spec { font-size: 9px; color: rgba(184,216,226,0.9); font-family: var(--mono); letter-spacing: 0.12em; text-transform: uppercase; }
+  .mockup-caption-tag {
+    display: inline-block;
+    width: fit-content;
+    font-family: var(--mono);
+    font-size: 8px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(226,184,74,0.10);
+    border: 1px solid rgba(226,184,74,0.25);
+    padding: 2px 7px;
+    border-radius: 999px;
+    margin-bottom: 4px;
+  }
+  .stage-row-1 { background: radial-gradient(circle at 25% 20%, rgba(74,155,173,0.18), transparent 42%), linear-gradient(155deg,#0C1C28,#163547 60%,#102938); }
+  .stage-row-2 { background: radial-gradient(circle at 78% 18%, rgba(226,184,74,0.16), transparent 45%), linear-gradient(155deg,#EDE3CF,#E3EEF2 62%,#D8E7EC); }
+  .stage-row-3 { background: radial-gradient(circle at 18% 22%, rgba(74,155,173,0.12), transparent 45%), linear-gradient(145deg,#DCEBF0,#E8E3D6 58%,#E9F1F4); }
 
   @media (max-width: 1200px) {
-    .mockup-card {
-      grid-template-columns: 1fr;
-    }
-    .mockup-stage {
-      border-right: none;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .mockup-caption {
-      border-left: none;
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
+    .mockup-grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .mockup-grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 760px) {
+    .mockup-grid-2,
+    .mockup-grid-3,
+    .mockup-grid-4 { grid-template-columns: 1fr; }
   }
 
   /* ── PEN ── */
@@ -7285,8 +7355,9 @@ body {
 
   /* ── NOTEBOOK ── */
   .notebook-wrap {
-    width:160px; height:210px; position:relative;
-    box-shadow: 6px 6px 20px rgba(0,0,0,0.5);
+    width:168px; height:216px; position:relative;
+    transform: perspective(900px) rotateY(-4deg) rotateX(1deg) translateY(-2px);
+    box-shadow: 10px 12px 24px rgba(0,0,0,0.36);
   }
   .notebook-cover {
     width:100%; height:100%; border-radius:3px;
@@ -7318,7 +7389,7 @@ body {
   }
 
   /* ── CUP / MUG ── */
-  .mug-wrap { width:110px; height:130px; position:relative; }
+  .mug-wrap { width:122px; height:146px; position:relative; transform: translateY(-2px); filter: drop-shadow(0 10px 18px rgba(0,0,0,0.3)); }
   .mug-body {
     position:absolute; left:0; top:10px; right:0; bottom:0;
     background:linear-gradient(135deg, #F2F9FC 0%, #E4F2F6 60%, #B8D8E2 100%);
@@ -7359,7 +7430,7 @@ body {
   }
 
   /* ── TOTE BAG ── */
-  .tote-wrap { position:relative; width:130px; height:150px; }
+  .tote-wrap { position:relative; width:140px; height:164px; transform: perspective(900px) rotateY(3deg) translateY(-2px); }
   .tote-body {
     position:absolute; left:10px; right:10px; top:30px; bottom:0;
     background:linear-gradient(160deg, #F6EDD8 0%, #e8dfc8 100%);
@@ -7384,9 +7455,9 @@ body {
 
   /* ── USB / BADGE ── */
   .badge-wrap {
-    width:130px; min-height:180px; position:relative;
+    width:138px; min-height:188px; position:relative;
     background:linear-gradient(160deg, #1A3A4A 0%, #12181A 100%);
-    border-radius:6px;
+    border-radius:10px;
     box-shadow:0 8px 24px rgba(0,0,0,0.5);
     display:flex; flex-direction:column; align-items:center;
     padding:20px 14px 14px;
@@ -7421,7 +7492,8 @@ body {
 
   /* ── ENVELOPE ── */
   .envelope-wrap {
-    width:220px; height:150px; position:relative;
+    width:232px; height:156px; position:relative;
+    transform: translateY(-1px);
   }
   .env-body {
     width:100%; height:100%;
@@ -7472,7 +7544,8 @@ body {
 
   /* ── FOLDER ── */
   .folder-wrap {
-    width:160px; height:210px; position:relative;
+    width:170px; height:220px; position:relative;
+    transform: perspective(900px) rotateY(-3deg) translateY(-2px);
   }
   .folder-body {
     width:100%; height:100%;
@@ -7530,7 +7603,7 @@ body {
   }
 
   /* ── USB KEY ── */
-  .usb-wrap { position:relative; width:120px; height:50px; display:flex; align-items:center; }
+  .usb-wrap { position:relative; width:126px; height:54px; display:flex; align-items:center; transform: translateY(-2px); filter: drop-shadow(0 8px 14px rgba(0,0,0,0.3)); }
   .usb-body {
     width:90px; height:36px; border-radius:4px;
     background:linear-gradient(160deg, #1A3A4A 0%, #12181A 100%);
@@ -7749,7 +7822,7 @@ body {
 
     <!-- PEN -->
     <div class="mockup-card">
-      <div class="mockup-stage" style="background:linear-gradient(160deg,#12181A,#1A3A4A); flex-direction:column; gap:16px">
+      <div class="mockup-stage stage-row-1" style="flex-direction:column; gap:16px">
         <div style="font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(133,181,194,0.5)">Executive Pen</div>
         <!-- Pen SVG illustration -->
         <svg width="240" height="48" viewBox="0 0 240 48" fill="none">
@@ -7810,6 +7883,7 @@ body {
         </svg>
       </div>
       <div class="mockup-caption">
+        <span class="mockup-caption-tag">Writing</span>
         <span class="mockup-caption-name">Executive Pen</span>
         <span class="mockup-caption-spec">Forest · Gold clip · Engraved</span>
       </div>
@@ -7817,7 +7891,7 @@ body {
 
     <!-- NOTEBOOK -->
     <div class="mockup-card">
-      <div class="mockup-stage" style="background:linear-gradient(135deg,#F6EDD8,#EEE8D5)">
+      <div class="mockup-stage stage-row-1">
         <div class="notebook-wrap">
           <div class="notebook-cover">
             <div class="notebook-spine"></div>
@@ -7842,6 +7916,7 @@ body {
         </div>
       </div>
       <div class="mockup-caption">
+        <span class="mockup-caption-tag">Writing</span>
         <span class="mockup-caption-name">Hardcover Notebook</span>
         <span class="mockup-caption-spec">A5 · Forest cover · Gold detail</span>
       </div>
@@ -7849,7 +7924,7 @@ body {
 
     <!-- MUG -->
     <div class="mockup-card">
-      <div class="mockup-stage" style="background:linear-gradient(160deg,#E4F2F6,#F6EDD8)">
+      <div class="mockup-stage stage-row-1">
         <div class="mug-wrap">
           <div class="mug-steam">
             <div class="steam-line"></div>
@@ -7874,6 +7949,7 @@ body {
         </div>
       </div>
       <div class="mockup-caption">
+        <span class="mockup-caption-tag">Hospitality</span>
         <span class="mockup-caption-name">Ceramic Mug</span>
         <span class="mockup-caption-spec">Cream glaze · Logo fired print</span>
       </div>
@@ -7885,7 +7961,7 @@ body {
 
     <!-- TOTE BAG -->
     <div class="mockup-card">
-      <div class="mockup-stage" style="background:linear-gradient(160deg,#1A3A4A,#12181A); min-height:220px">
+      <div class="mockup-stage stage-row-2" style="min-height:220px">
         <div class="tote-wrap">
           <div class="tote-handles"></div>
           <div class="tote-body">
@@ -7902,6 +7978,7 @@ body {
         </div>
       </div>
       <div class="mockup-caption">
+        <span class="mockup-caption-tag">Carry</span>
         <span class="mockup-caption-name">Canvas Tote</span>
         <span class="mockup-caption-spec">Natural · Screen print</span>
       </div>
@@ -7909,7 +7986,7 @@ body {
 
     <!-- BADGE / ID CARD -->
     <div class="mockup-card">
-      <div class="mockup-stage" style="background:linear-gradient(160deg,#E4F2F6,#B8D8E2); min-height:220px; flex-direction:column">
+      <div class="mockup-stage stage-row-2" style="min-height:220px; flex-direction:column">
         <!-- Lanyard string -->
         <div style="width:3px;height:28px;background:linear-gradient(to bottom,#E2B84A,#B8881A);border-radius:2px;margin-bottom:0"></div>
         <div style="width:14px;height:6px;background:#B8881A;border-radius:2px;margin-bottom:0"></div>
@@ -7930,6 +8007,7 @@ body {
         </div>
       </div>
       <div class="mockup-caption">
+        <span class="mockup-caption-tag">Identity</span>
         <span class="mockup-caption-name">ID / Access Badge</span>
         <span class="mockup-caption-spec">PVC card · Gold lanyard</span>
       </div>
@@ -7937,7 +8015,7 @@ body {
 
     <!-- PRESENTATION FOLDER -->
     <div class="mockup-card">
-      <div class="mockup-stage" style="background:linear-gradient(160deg,#F6EDD8,#EEE8D5); min-height:220px">
+      <div class="mockup-stage stage-row-2" style="min-height:220px">
         <div class="folder-wrap">
           <div class="folder-body">
             <div class="folder-tab"></div>
@@ -7958,6 +8036,7 @@ body {
         </div>
       </div>
       <div class="mockup-caption">
+        <span class="mockup-caption-tag">Presentation</span>
         <span class="mockup-caption-name">Press Folder</span>
         <span class="mockup-caption-spec">A4 · Matte + Spot UV</span>
       </div>
@@ -7965,7 +8044,7 @@ body {
 
     <!-- ENVELOPE -->
     <div class="mockup-card">
-      <div class="mockup-stage" style="background:linear-gradient(135deg,#E4F2F6,#F6EDD8); min-height:220px">
+      <div class="mockup-stage stage-row-2" style="min-height:220px">
         <div class="envelope-wrap">
           <div class="env-body">
             <div class="env-side-l"></div>
@@ -7987,6 +8066,7 @@ body {
         </div>
       </div>
       <div class="mockup-caption">
+        <span class="mockup-caption-tag">Mailing</span>
         <span class="mockup-caption-name">Official Envelope</span>
         <span class="mockup-caption-spec">C4 · Parchment · Wax seal</span>
       </div>
@@ -7998,7 +8078,7 @@ body {
 
     <!-- USB KEY -->
     <div class="mockup-card">
-      <div class="mockup-stage" style="background:linear-gradient(160deg,#12181A,#1A3A4A)">
+      <div class="mockup-stage stage-row-3">
         <div style="display:flex;align-items:center;gap:4px">
           <div style="width:90px;height:36px;border-radius:6px;background:linear-gradient(160deg,#1A3A4A,#12181A);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.5);position:relative;overflow:hidden">
             <div style="position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,rgba(226,184,74,0.04),rgba(226,184,74,0.04) 1px,transparent 1px,transparent 10px)"></div>
@@ -8013,6 +8093,7 @@ body {
         </div>
       </div>
       <div class="mockup-caption">
+        <span class="mockup-caption-tag">Technology</span>
         <span class="mockup-caption-name">USB Key</span>
         <span class="mockup-caption-spec">32GB · Gold connector · Engraved</span>
       </div>
@@ -8020,7 +8101,7 @@ body {
 
     <!-- POSTAGE STAMP (govt style) -->
     <div class="mockup-card">
-      <div class="mockup-stage" style="background:linear-gradient(135deg,#F6EDD8,#e8dfc8)">
+      <div class="mockup-stage stage-row-3">
         <div style="display:flex;flex-direction:column;align-items:center;gap:16px">
           <!-- Stamp -->
           <div style="width:90px;height:108px;background:#F6EDD8;border:1.5px solid rgba(0,0,0,0.12);box-shadow:2px 2px 10px rgba(0,0,0,0.25);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;position:relative;
@@ -8043,6 +8124,7 @@ body {
         </div>
       </div>
       <div class="mockup-caption">
+        <span class="mockup-caption-tag">Authentication</span>
         <span class="mockup-caption-name">Stamp &amp; Wax Seal</span>
         <span class="mockup-caption-spec">Official correspondence</span>
       </div>
@@ -8050,7 +8132,7 @@ body {
 
     <!-- BRANDED REPORT COVER -->
     <div class="mockup-card">
-      <div class="mockup-stage" style="background:linear-gradient(135deg,#E4F2F6,#F6EDD8)">
+      <div class="mockup-stage stage-row-3">
         <div style="width:150px;height:200px;border-radius:3px;box-shadow:5px 5px 20px rgba(0,0,0,0.3);overflow:hidden;position:relative">
           <!-- Report cover -->
           <div style="width:100%;height:100%;background:linear-gradient(160deg,#1A3A4A 0%,#12181A 100%);padding:20px 18px;display:flex;flex-direction:column;justify-content:space-between;position:relative">
@@ -8072,6 +8154,7 @@ body {
         </div>
       </div>
       <div class="mockup-caption">
+        <span class="mockup-caption-tag">Publication</span>
         <span class="mockup-caption-name">Annual Report Cover</span>
         <span class="mockup-caption-spec">A4 · Matte laminate · Gold spine</span>
       </div>
