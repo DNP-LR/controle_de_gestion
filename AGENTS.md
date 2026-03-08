@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 This repository centers on one primary artifact: the brand system file.
-- `pulsera-brand-book-v10-light (1).html`: main document containing HTML, CSS, and presentation sections.
+- `pulsera-brand-book-v10-light.html`: main brand book containing HTML, CSS, and presentation sections.
 - `AGENTS.md`: contributor guide for future updates.
 
 Treat the HTML file as the canonical source for brand foundations (color, typography, spacing, voice, and usage examples). Keep related changes grouped by area (for example: root variables, layout sections, and responsive rules). If the project grows, split into `css/`, `js/`, and `assets/` directories instead of expanding inline blocks.
@@ -10,7 +10,7 @@ Treat the HTML file as the canonical source for brand foundations (color, typogr
 ## Build, Test, and Development Commands
 No build system is configured. Use a local static server for development:
 - `python3 -m http.server 8000` - serves the repository at `http://localhost:8000`.
-- `xdg-open 'http://localhost:8000/pulsera-brand-book-v10-light%20(1).html'` - opens the page in a browser.
+- `xdg-open 'http://localhost:8000/pulsera-brand-book-v10-light.html'` - opens the page in a browser.
 
 Manual validation is expected: check layout, typography, color usage, and section navigation after edits.
 
