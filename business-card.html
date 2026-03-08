@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contrôle de Gestion — Business Card</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0a0c10;
+      --navy: #1a1d23;
+      --blue: #475569;
+      --mid: #94a3b8;
+      --steel: #94a3b8;
+      --silver: #cbd5e1;
+      --mist: #e2e8f0;
+      --white: #f1f5f9;
+      --gold: #f97316;
+      --gold-lt: #fb923c;
+      --gold-dk: #ea580c;
+      --serif: 'Outfit', sans-serif;
+      --sans: 'Space Grotesk', sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--ink);
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 14px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+      gap: 48px;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--steel);
+    }
+
+    .bcard-wrap {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* Card Container */
+    .bcard {
+      width: 400px;
+      height: 225px;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    /* ── FRONT ── */
+    .bcard-front {
+      background: var(--navy);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 30px;
+    }
+
+    .bcard-grid-overlay {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 25px 25px;
+    }
+
+    .bcard-accent {
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 5px;
+      background: linear-gradient(to bottom, var(--gold), var(--gold-dk));
+    }
+
+    /* Top: both logos side by side */
+    .header-logos {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 2;
+    }
+
+    .brand-side {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .bcard-name-wm {
+      font-family: var(--serif);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .bcard-name-wm span { color: var(--gold); }
+
+    .logo-national {
+      height: 40px;
+      width: auto;
+      filter: drop-shadow(0 1px 3px rgba(0,0,0,0.4));
+    }
+
+    /* Middle: person */
+    .person-info {
+      z-index: 2;
+    }
+
+    .bcard-person-name {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .bcard-title {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 4px;
+    }
+
+    /* Bottom: contact */
+    .bcard-contact {
+      z-index: 2;
+      font-family: var(--mono);
+      font-size: 9px;
+      color: var(--steel);
+      letter-spacing: 0.02em;
+      line-height: 1.8;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 12px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    /* ── BACK ── */
+    .bcard-back {
+      background: #0d0f13;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .back-pattern {
+      position: absolute; inset: 0;
+      background-image: repeating-linear-gradient(
+        45deg,
+        rgba(249,115,22,0.04),
+        rgba(249,115,22,0.04) 1px,
+        transparent 1px,
+        transparent 16px
+      );
+    }
+
+    .bcard-back .back-logo-brand {
+      position: relative; z-index: 1;
+    }
+
+    .bcard-back .back-logo-national {
+      position: relative; z-index: 1;
+      height: 60px;
+      width: auto;
+      opacity: 0.85;
+    }
+
+    .back-divider {
+      width: 1px;
+      height: 50px;
+      background: rgba(249,115,22,0.3);
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Carte de Visite</h1>
+
+<div class="bcard-wrap">
+  <!-- FRONT -->
+  <div class="bcard bcard-front">
+    <div class="bcard-grid-overlay"></div>
+    <div class="bcard-accent"></div>
+
+    <div class="header-logos">
+      <div class="brand-side">
+        <img src="logo.svg" width="18" height="24" alt="Contrôle de Gestion"/>
+        <div class="bcard-name-wm">Contrôle de <span>Gestion</span></div>
+      </div>
+      <img src="second_logo.svg" class="logo-national" alt="Armoiries du Cameroun">
+    </div>
+
+    <div class="person-info">
+      <div class="bcard-person-name">Alexandre Martin</div>
+      <div class="bcard-title">Contrôleur de Gestion Senior</div>
+    </div>
+
+    <div class="bcard-contact">
+      <div>
+        a.martin@controle-gestion.cm<br>
+        +237 6 55 01 82 00
+      </div>
+      <div style="text-align: right;">
+        Douala, Cameroun<br>
+        www.controle-gestion.cm
+      </div>
+    </div>
+  </div>
+
+  <!-- BACK -->
+  <div class="bcard bcard-back">
+    <div class="back-pattern"></div>
+    <img src="logo.svg" width="30" height="40" class="back-logo-brand" alt="Contrôle de Gestion"/>
+    <div class="back-divider"></div>
+    <img src="second_logo.svg" class="back-logo-national" alt="Armoiries du Cameroun">
+  </div>
+</div>
+
+</body>
+</html>
