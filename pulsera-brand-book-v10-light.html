@@ -1068,7 +1068,7 @@
         .sid-card-showcase .header-row {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
+            align-items: center;
             position: relative;
             z-index: 2;
             gap: 18px;
@@ -1217,10 +1217,11 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 0;
+            gap: 4px;
             min-width: 88px;
-            padding: 6px 0 0 10px;
+            padding: 0 0 0 10px;
             border-left: 1px solid rgba(226, 184, 74, 0.12);
+            transform: translateY(-4px);
         }
 
         .sid-card-showcase .logo-national {
@@ -1237,7 +1238,7 @@
             text-transform: uppercase;
             color: rgba(242, 249, 252, 0.72);
             line-height: 1.4;
-            text-align: left;
+            text-align: center;
         }
 
         .sid-card-showcase .back-right {
@@ -3416,6 +3417,7 @@
                         </div>
                         <div class="institution-side">
                             <img src="second_logo.svg" class="logo-national" alt="Armoiries du Cameroun">
+                            <div class="institution-caption">Armoiries du Cameroun</div>
                         </div>
                     </div>
                     <div class="person-info">
@@ -3939,6 +3941,204 @@
                 text-align: center;
             }
 
+            .vc-card-structured {
+                position: absolute;
+                inset: 0;
+                padding: 18px 22px 16px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                z-index: 1;
+            }
+
+            .vc-header-row {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .vc-brand-side {
+                display: flex;
+                align-items: flex-start;
+                gap: 8px;
+                min-width: 0;
+                flex: 1 1 auto;
+            }
+
+            .vc-brand-stack {
+                min-width: 0;
+            }
+
+            .vc-brand-sub {
+                font-family: var(--mono);
+                font-size: 5.5px;
+                letter-spacing: 0.18em;
+                text-transform: uppercase;
+                margin-top: 2px;
+                line-height: 1.5;
+            }
+
+            .vc-brand-sub-light {
+                color: rgba(148, 163, 184, 0.62);
+            }
+
+            .vc-brand-sub-dark {
+                color: rgba(26, 29, 35, 0.55);
+            }
+
+            .vc-institution-side {
+                min-width: 88px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 0;
+                padding: 6px 0 0 10px;
+            }
+
+            .vc-institution-side-light,
+            .vc-institution-side-dark {
+                border-left: 1px solid rgba(226, 184, 74, 0.12);
+            }
+
+            .vc-logo-national {
+                height: 52px;
+                width: auto;
+                object-fit: contain;
+            }
+
+            .vc-back-layout {
+                position: absolute;
+                inset: 0;
+                display: flex;
+                z-index: 1;
+            }
+
+            .vc-back-left {
+                flex: 0 0 56%;
+                padding: 0 24px 0 28px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 8px;
+            }
+
+            .vc-back-left-dark {
+                border-right: none;
+            }
+
+            .vc-back-wordmark {
+                font-family: var(--serif);
+                font-size: 14px;
+                font-weight: 500;
+                letter-spacing: 0.16em;
+                line-height: 1.25;
+            }
+
+            .vc-back-wordmark-light {
+                color: #f1f5f9;
+            }
+
+            .vc-back-wordmark-light span {
+                color: #f97316;
+            }
+
+            .vc-back-tagline {
+                font-family: var(--mono);
+                font-size: 5px;
+                letter-spacing: 0.18em;
+                text-transform: uppercase;
+                line-height: 1.7;
+            }
+
+            .vc-back-tagline-light {
+                color: rgba(148, 163, 184, 0.48);
+            }
+
+            .vc-back-right {
+                flex: 0 0 44%;
+                padding: 0 17px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 6px;
+            }
+
+            .vc-back-logo-national {
+                height: 51px;
+                width: auto;
+                object-fit: contain;
+            }
+
+            .vc-back-corner {
+                position: absolute;
+                width: 12px;
+                height: 12px;
+                border-style: solid;
+                z-index: 2;
+            }
+
+            .vc-back-corner-light {
+                border-color: rgba(249, 115, 22, 0.22);
+            }
+
+            .vc-back-corner-dark {
+                border-color: rgba(71, 85, 105, 0.24);
+            }
+
+            .vc-bc-tl {
+                top: 10px;
+                left: 10px;
+                border-width: 1px 0 0 1px;
+            }
+
+            .vc-bc-tr {
+                top: 10px;
+                right: 10px;
+                border-width: 1px 1px 0 0;
+            }
+
+            .vc-bc-bl {
+                bottom: 10px;
+                left: 10px;
+                border-width: 0 0 1px 1px;
+            }
+
+            .vc-bc-br {
+                bottom: 10px;
+                right: 10px;
+                border-width: 0 1px 1px 0;
+            }
+
+            .vc-ministry-block {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1px;
+                max-width: 122px;
+            }
+
+            .vc-ministry-line {
+                font-family: var(--mono);
+                font-size: 4.6px;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
+                line-height: 1.55;
+                text-align: center;
+            }
+
+            .vc-ministry-line-light {
+                color: rgba(148, 163, 184, 0.74);
+            }
+
+            .vc-ministry-line-light.vc-ministry-line-top {
+                color: rgba(249, 115, 22, 0.72);
+                font-size: 5.3px;
+                font-weight: 700;
+            }
+
             /* Print specs table */
             .vc-print-specs {
                 display: grid;
@@ -4005,13 +4205,18 @@
                     <div>
                         <div class="vc-face-label">Front</div>
                         <div class="vc-card vc-card-A">
-                            <div class="vc-card-inner">
-                                <div>
-                                    <div class="vc-ct">
+                            <div class="vc-card-structured">
+                                <div class="vc-header-row">
+                                    <div class="vc-brand-side">
                                         <img src="logo.svg" width="14" height="18" alt="Contrôle de Gestion"/>
-                                        <span class="vc-brand-wm vc-brand-light">Contrôle de <em>Gestion</em></span>
+                                        <div class="vc-brand-stack">
+                                            <div class="vc-brand-wm vc-brand-light">Contrôle de <em>Gestion</em></div>
+                                            <div class="vc-brand-sub vc-brand-sub-light">Contrôle de Gestion Ministériel</div>
+                                        </div>
                                     </div>
-                                    <div class="vc-tagline vc-tagline-lt">Contrôle de Gestion</div>
+                                    <div class="vc-institution-side vc-institution-side-light">
+                                        <img src="second_logo.svg" class="vc-logo-national" alt="Armoiries du Cameroun"/>
+                                    </div>
                                 </div>
                                 <div class="vc-name-area">
                                     <div class="vc-name vc-name-lt">Marc Dubois</div>
@@ -4034,10 +4239,27 @@
                     <div>
                         <div class="vc-face-label">Back</div>
                         <div class="vc-card vc-card-back">
-                            <div class="vc-back-center">
-                                <img src="logo.svg" width="27" height="36" alt="Contrôle de Gestion"/>
-                                <div class="vc-back-rule"></div>
-                                <div class="vc-back-url">controle-gestion.cm</div>
+                            <div class="vc-back-corner vc-back-corner-light vc-bc-tl"></div>
+                            <div class="vc-back-corner vc-back-corner-light vc-bc-tr"></div>
+                            <div class="vc-back-corner vc-back-corner-light vc-bc-bl"></div>
+                            <div class="vc-back-corner vc-back-corner-light vc-bc-br"></div>
+                            <div class="vc-back-layout">
+                                <div class="vc-back-left vc-back-left-dark">
+                                    <div class="vc-back-wordmark vc-back-wordmark-light">Contrôle de <span>Gestion</span></div>
+                                    <div class="vc-back-tagline vc-back-tagline-light">
+                                        Contrôle de Gestion Ministériel<br>
+                                        Cameroun
+                                    </div>
+                                </div>
+                                <div class="vc-back-right">
+                                    <img src="second_logo.svg" class="vc-back-logo-national" alt="Armoiries du Cameroun"/>
+                                    <div class="vc-ministry-block">
+                                        <div class="vc-ministry-line vc-ministry-line-light vc-ministry-line-top">Ministère des Finances</div>
+                                        <div class="vc-ministry-line vc-ministry-line-light">Secrétariat Général</div>
+                                        <div class="vc-ministry-line vc-ministry-line-light">Direction Générale du Budget</div>
+                                        <div class="vc-ministry-line vc-ministry-line-light">Division de la Réforme Budgétaire</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -4056,13 +4278,18 @@
                     <div>
                         <div class="vc-face-label">Front</div>
                         <div class="vc-card vc-card-B">
-                            <div class="vc-card-inner" style="padding-left:26px">
-                                <div>
-                                    <div class="vc-ct">
+                            <div class="vc-card-structured">
+                                <div class="vc-header-row">
+                                    <div class="vc-brand-side">
                                         <img src="logo.svg" width="14" height="18" alt="Contrôle de Gestion"/>
-                                        <span class="vc-brand-wm vc-brand-dark">Contrôle de <em>Gestion</em></span>
+                                        <div class="vc-brand-stack">
+                                            <div class="vc-brand-wm vc-brand-dark">Contrôle de <em>Gestion</em></div>
+                                            <div class="vc-brand-sub vc-brand-sub-dark">Contrôle de Gestion Ministériel</div>
+                                        </div>
                                     </div>
-                                    <div class="vc-tagline vc-tagline-dk">Contrôle de Gestion</div>
+                                    <div class="vc-institution-side vc-institution-side-dark">
+                                        <img src="second_logo.svg" class="vc-logo-national" alt="Armoiries du Cameroun"/>
+                                    </div>
                                 </div>
                                 <div class="vc-name-area">
                                     <div class="vc-name vc-name-dk">Claire Beaumont</div>
@@ -4085,10 +4312,27 @@
                     <div>
                         <div class="vc-face-label">Back</div>
                         <div class="vc-card vc-card-back-parch">
-                            <div class="vc-back-center">
-                                <img src="logo.svg" width="27" height="36" alt="Contrôle de Gestion"/>
-                                <div class="vc-back-rule"></div>
-                                <div class="vc-back-url">controle-gestion.cm</div>
+                            <div class="vc-back-corner vc-back-corner-dark vc-bc-tl"></div>
+                            <div class="vc-back-corner vc-back-corner-dark vc-bc-tr"></div>
+                            <div class="vc-back-corner vc-back-corner-dark vc-bc-bl"></div>
+                            <div class="vc-back-corner vc-back-corner-dark vc-bc-br"></div>
+                            <div class="vc-back-layout">
+                                <div class="vc-back-left vc-back-left-dark">
+                                    <div class="vc-back-wordmark vc-back-wordmark-light">Contrôle de <span>Gestion</span></div>
+                                    <div class="vc-back-tagline vc-back-tagline-light">
+                                        Contrôle de Gestion Ministériel<br>
+                                        Cameroun
+                                    </div>
+                                </div>
+                                <div class="vc-back-right">
+                                    <img src="second_logo.svg" class="vc-back-logo-national" alt="Armoiries du Cameroun"/>
+                                    <div class="vc-ministry-block">
+                                        <div class="vc-ministry-line vc-ministry-line-light vc-ministry-line-top">Ministère des Finances</div>
+                                        <div class="vc-ministry-line vc-ministry-line-light">Secrétariat Général</div>
+                                        <div class="vc-ministry-line vc-ministry-line-light">Direction Générale du Budget</div>
+                                        <div class="vc-ministry-line vc-ministry-line-light">Division de la Réforme Budgétaire</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -4107,13 +4351,18 @@
                     <div>
                         <div class="vc-face-label">Front</div>
                         <div class="vc-card vc-card-C">
-                            <div class="vc-card-inner">
-                                <div>
-                                    <div class="vc-ct">
+                            <div class="vc-card-structured">
+                                <div class="vc-header-row">
+                                    <div class="vc-brand-side">
                                         <img src="logo.svg" width="14" height="18" alt="Contrôle de Gestion"/>
-                                        <span class="vc-brand-wm vc-brand-light">Contrôle de <em>Gestion</em></span>
+                                        <div class="vc-brand-stack">
+                                            <div class="vc-brand-wm vc-brand-light">Contrôle de <em>Gestion</em></div>
+                                            <div class="vc-brand-sub vc-brand-sub-light">Contrôle de Gestion Ministériel</div>
+                                        </div>
                                     </div>
-                                    <div class="vc-tagline vc-tagline-lt">Contrôle de Gestion</div>
+                                    <div class="vc-institution-side vc-institution-side-light">
+                                        <img src="second_logo.svg" class="vc-logo-national" alt="Armoiries du Cameroun"/>
+                                    </div>
                                 </div>
                                 <div class="vc-name-area">
                                     <div class="vc-name vc-name-lt">Thomas Leclerc</div>
@@ -4142,12 +4391,26 @@
                     <div>
                         <div class="vc-face-label">Back</div>
                         <div class="vc-card vc-card-back">
-                            <div class="vc-back-center" style="text-align:center;padding:0 20px">
-                                <img src="logo.svg" width="27" height="36" alt="Contrôle de Gestion"/>
-                                <div class="vc-back-rule"></div>
-                                <div style="font-size:6px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(148,163,184,0.4);line-height:1.9">
-                                    Contrôle de Gestion<br>
-                                    <span style="color:rgba(148,163,184,0.25)">Contrôle de Gestion</span>
+                            <div class="vc-back-corner vc-back-corner-light vc-bc-tl"></div>
+                            <div class="vc-back-corner vc-back-corner-light vc-bc-tr"></div>
+                            <div class="vc-back-corner vc-back-corner-light vc-bc-bl"></div>
+                            <div class="vc-back-corner vc-back-corner-light vc-bc-br"></div>
+                            <div class="vc-back-layout">
+                                <div class="vc-back-left vc-back-left-dark">
+                                    <div class="vc-back-wordmark vc-back-wordmark-light">Contrôle de <span>Gestion</span></div>
+                                    <div class="vc-back-tagline vc-back-tagline-light">
+                                        Contrôle de Gestion Ministériel<br>
+                                        Cameroun
+                                    </div>
+                                </div>
+                                <div class="vc-back-right">
+                                    <img src="second_logo.svg" class="vc-back-logo-national" alt="Armoiries du Cameroun"/>
+                                    <div class="vc-ministry-block">
+                                        <div class="vc-ministry-line vc-ministry-line-light vc-ministry-line-top">Ministère des Finances</div>
+                                        <div class="vc-ministry-line vc-ministry-line-light">Secrétariat Général</div>
+                                        <div class="vc-ministry-line vc-ministry-line-light">Direction Générale du Budget</div>
+                                        <div class="vc-ministry-line vc-ministry-line-light">Division de la Réforme Budgétaire</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -9400,6 +9663,7 @@
                             </div>
                             <div class="institution-side">
                                 <img src="second_logo.svg" class="logo-national" alt="Armoiries du Cameroun">
+                                <div class="institution-caption">Armoiries du Cameroun</div>
                             </div>
                         </div>
                         <div class="person-info">
@@ -9927,6 +10191,204 @@
                     text-align: center;
                 }
 
+                .vc-card-structured {
+                    position: absolute;
+                    inset: 0;
+                    padding: 18px 22px 16px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    z-index: 1;
+                }
+
+                .vc-header-row {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    gap: 12px;
+                }
+
+                .vc-brand-side {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 8px;
+                    min-width: 0;
+                    flex: 1 1 auto;
+                }
+
+                .vc-brand-stack {
+                    min-width: 0;
+                }
+
+                .vc-brand-sub {
+                    font-family: var(--mono);
+                    font-size: 5.5px;
+                    letter-spacing: 0.18em;
+                    text-transform: uppercase;
+                    margin-top: 2px;
+                    line-height: 1.5;
+                }
+
+                .vc-brand-sub-light {
+                    color: rgba(148, 163, 184, 0.62);
+                }
+
+                .vc-brand-sub-dark {
+                    color: rgba(26, 29, 35, 0.55);
+                }
+
+                .vc-institution-side {
+                    min-width: 88px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0;
+                    padding: 6px 0 0 10px;
+                }
+
+                .vc-institution-side-light,
+                .vc-institution-side-dark {
+                    border-left: 1px solid rgba(226, 184, 74, 0.12);
+                }
+
+                .vc-logo-national {
+                    height: 52px;
+                    width: auto;
+                    object-fit: contain;
+                }
+
+                .vc-back-layout {
+                    position: absolute;
+                    inset: 0;
+                    display: flex;
+                    z-index: 1;
+                }
+
+                .vc-back-left {
+                    flex: 0 0 56%;
+                    padding: 0 24px 0 28px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 8px;
+                }
+
+                .vc-back-left-dark {
+                    border-right: none;
+                }
+
+                .vc-back-wordmark {
+                    font-family: var(--serif);
+                    font-size: 14px;
+                    font-weight: 500;
+                    letter-spacing: 0.16em;
+                    line-height: 1.25;
+                }
+
+                .vc-back-wordmark-light {
+                    color: #f1f5f9;
+                }
+
+                .vc-back-wordmark-light span {
+                    color: #f97316;
+                }
+
+                .vc-back-tagline {
+                    font-family: var(--mono);
+                    font-size: 5px;
+                    letter-spacing: 0.18em;
+                    text-transform: uppercase;
+                    line-height: 1.7;
+                }
+
+                .vc-back-tagline-light {
+                    color: rgba(148, 163, 184, 0.48);
+                }
+
+                .vc-back-right {
+                    flex: 0 0 44%;
+                    padding: 0 17px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 6px;
+                }
+
+                .vc-back-logo-national {
+                    height: 51px;
+                    width: auto;
+                    object-fit: contain;
+                }
+
+                .vc-back-corner {
+                    position: absolute;
+                    width: 12px;
+                    height: 12px;
+                    border-style: solid;
+                    z-index: 2;
+                }
+
+                .vc-back-corner-light {
+                    border-color: rgba(249, 115, 22, 0.22);
+                }
+
+                .vc-back-corner-dark {
+                    border-color: rgba(71, 85, 105, 0.24);
+                }
+
+                .vc-bc-tl {
+                    top: 10px;
+                    left: 10px;
+                    border-width: 1px 0 0 1px;
+                }
+
+                .vc-bc-tr {
+                    top: 10px;
+                    right: 10px;
+                    border-width: 1px 1px 0 0;
+                }
+
+                .vc-bc-bl {
+                    bottom: 10px;
+                    left: 10px;
+                    border-width: 0 0 1px 1px;
+                }
+
+                .vc-bc-br {
+                    bottom: 10px;
+                    right: 10px;
+                    border-width: 0 1px 1px 0;
+                }
+
+                .vc-ministry-block {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 1px;
+                    max-width: 122px;
+                }
+
+                .vc-ministry-line {
+                    font-family: var(--mono);
+                    font-size: 4.6px;
+                    letter-spacing: 0.05em;
+                    text-transform: uppercase;
+                    line-height: 1.55;
+                    text-align: center;
+                }
+
+                .vc-ministry-line-light {
+                    color: rgba(148, 163, 184, 0.74);
+                }
+
+                .vc-ministry-line-light.vc-ministry-line-top {
+                    color: rgba(249, 115, 22, 0.72);
+                    font-size: 5.3px;
+                    font-weight: 700;
+                }
+
                 /* Print specs table */
                 .vc-print-specs {
                     display: grid;
@@ -9993,13 +10455,18 @@
                         <div>
                             <div class="vc-face-label">Front</div>
                             <div class="vc-card vc-card-A">
-                                <div class="vc-card-inner">
-                                    <div>
-                                        <div class="vc-ct">
+                                <div class="vc-card-structured">
+                                    <div class="vc-header-row">
+                                        <div class="vc-brand-side">
                                             <img src="logo.svg" width="14" height="18" alt="Contrôle de Gestion"/>
-                                            <span class="vc-brand-wm vc-brand-light">Contrôle de <em>Gestion</em></span>
+                                            <div class="vc-brand-stack">
+                                                <div class="vc-brand-wm vc-brand-light">Contrôle de <em>Gestion</em></div>
+                                                <div class="vc-brand-sub vc-brand-sub-light">Contrôle de Gestion Ministériel</div>
+                                            </div>
                                         </div>
-                                        <div class="vc-tagline vc-tagline-lt">Contrôle de Gestion</div>
+                                        <div class="vc-institution-side vc-institution-side-light">
+                                            <img src="second_logo.svg" class="vc-logo-national" alt="Armoiries du Cameroun"/>
+                                        </div>
                                     </div>
                                     <div class="vc-name-area">
                                         <div class="vc-name vc-name-lt">Marc Dubois</div>
@@ -10022,10 +10489,27 @@
                         <div>
                             <div class="vc-face-label">Back</div>
                             <div class="vc-card vc-card-back">
-                                <div class="vc-back-center">
-                                    <img src="logo.svg" width="27" height="36" alt="Contrôle de Gestion"/>
-                                    <div class="vc-back-rule"></div>
-                                    <div class="vc-back-url">controle-gestion.cm</div>
+                                <div class="vc-back-corner vc-back-corner-light vc-bc-tl"></div>
+                                <div class="vc-back-corner vc-back-corner-light vc-bc-tr"></div>
+                                <div class="vc-back-corner vc-back-corner-light vc-bc-bl"></div>
+                                <div class="vc-back-corner vc-back-corner-light vc-bc-br"></div>
+                                <div class="vc-back-layout">
+                                    <div class="vc-back-left vc-back-left-dark">
+                                        <div class="vc-back-wordmark vc-back-wordmark-light">Contrôle de <span>Gestion</span></div>
+                                        <div class="vc-back-tagline vc-back-tagline-light">
+                                            Contrôle de Gestion Ministériel<br>
+                                            Cameroun
+                                        </div>
+                                    </div>
+                                    <div class="vc-back-right">
+                                        <img src="second_logo.svg" class="vc-back-logo-national" alt="Armoiries du Cameroun"/>
+                                        <div class="vc-ministry-block">
+                                            <div class="vc-ministry-line vc-ministry-line-light vc-ministry-line-top">Ministère des Finances</div>
+                                            <div class="vc-ministry-line vc-ministry-line-light">Secrétariat Général</div>
+                                            <div class="vc-ministry-line vc-ministry-line-light">Direction Générale du Budget</div>
+                                            <div class="vc-ministry-line vc-ministry-line-light">Division de la Réforme Budgétaire</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -10044,13 +10528,18 @@
                         <div>
                             <div class="vc-face-label">Front</div>
                             <div class="vc-card vc-card-B">
-                                <div class="vc-card-inner" style="padding-left:26px">
-                                    <div>
-                                        <div class="vc-ct">
+                                <div class="vc-card-structured">
+                                    <div class="vc-header-row">
+                                        <div class="vc-brand-side">
                                             <img src="logo.svg" width="14" height="18" alt="Contrôle de Gestion"/>
-                                            <span class="vc-brand-wm vc-brand-dark">Contrôle de <em>Gestion</em></span>
+                                            <div class="vc-brand-stack">
+                                                <div class="vc-brand-wm vc-brand-dark">Contrôle de <em>Gestion</em></div>
+                                                <div class="vc-brand-sub vc-brand-sub-dark">Contrôle de Gestion Ministériel</div>
+                                            </div>
                                         </div>
-                                        <div class="vc-tagline vc-tagline-dk">Contrôle de Gestion</div>
+                                        <div class="vc-institution-side vc-institution-side-dark">
+                                            <img src="second_logo.svg" class="vc-logo-national" alt="Armoiries du Cameroun"/>
+                                        </div>
                                     </div>
                                     <div class="vc-name-area">
                                         <div class="vc-name vc-name-dk">Claire Beaumont</div>
@@ -10073,10 +10562,27 @@
                         <div>
                             <div class="vc-face-label">Back</div>
                             <div class="vc-card vc-card-back-parch">
-                                <div class="vc-back-center">
-                                    <img src="logo.svg" width="27" height="36" alt="Contrôle de Gestion"/>
-                                    <div class="vc-back-rule"></div>
-                                    <div class="vc-back-url">controle-gestion.cm</div>
+                                <div class="vc-back-corner vc-back-corner-dark vc-bc-tl"></div>
+                                <div class="vc-back-corner vc-back-corner-dark vc-bc-tr"></div>
+                                <div class="vc-back-corner vc-back-corner-dark vc-bc-bl"></div>
+                                <div class="vc-back-corner vc-back-corner-dark vc-bc-br"></div>
+                                <div class="vc-back-layout">
+                                    <div class="vc-back-left vc-back-left-dark">
+                                        <div class="vc-back-wordmark vc-back-wordmark-light">Contrôle de <span>Gestion</span></div>
+                                        <div class="vc-back-tagline vc-back-tagline-light">
+                                            Contrôle de Gestion Ministériel<br>
+                                            Cameroun
+                                        </div>
+                                    </div>
+                                    <div class="vc-back-right">
+                                        <img src="second_logo.svg" class="vc-back-logo-national" alt="Armoiries du Cameroun"/>
+                                        <div class="vc-ministry-block">
+                                            <div class="vc-ministry-line vc-ministry-line-light vc-ministry-line-top">Ministère des Finances</div>
+                                            <div class="vc-ministry-line vc-ministry-line-light">Secrétariat Général</div>
+                                            <div class="vc-ministry-line vc-ministry-line-light">Direction Générale du Budget</div>
+                                            <div class="vc-ministry-line vc-ministry-line-light">Division de la Réforme Budgétaire</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -10095,13 +10601,18 @@
                         <div>
                             <div class="vc-face-label">Front</div>
                             <div class="vc-card vc-card-C">
-                                <div class="vc-card-inner">
-                                    <div>
-                                        <div class="vc-ct">
+                                <div class="vc-card-structured">
+                                    <div class="vc-header-row">
+                                        <div class="vc-brand-side">
                                             <img src="logo.svg" width="14" height="18" alt="Contrôle de Gestion"/>
-                                            <span class="vc-brand-wm vc-brand-light">Contrôle de <em>Gestion</em></span>
+                                            <div class="vc-brand-stack">
+                                                <div class="vc-brand-wm vc-brand-light">Contrôle de <em>Gestion</em></div>
+                                                <div class="vc-brand-sub vc-brand-sub-light">Contrôle de Gestion Ministériel</div>
+                                            </div>
                                         </div>
-                                        <div class="vc-tagline vc-tagline-lt">Contrôle de Gestion</div>
+                                        <div class="vc-institution-side vc-institution-side-light">
+                                            <img src="second_logo.svg" class="vc-logo-national" alt="Armoiries du Cameroun"/>
+                                        </div>
                                     </div>
                                     <div class="vc-name-area">
                                         <div class="vc-name vc-name-lt">Thomas Leclerc</div>
@@ -10133,12 +10644,26 @@
                         <div>
                             <div class="vc-face-label">Back</div>
                             <div class="vc-card vc-card-back">
-                                <div class="vc-back-center" style="text-align:center;padding:0 20px">
-                                    <img src="logo.svg" width="27" height="36" alt="Contrôle de Gestion"/>
-                                    <div class="vc-back-rule"></div>
-                                    <div style="font-size:6px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(148,163,184,0.4);line-height:1.9">
-                                        Contrôle de Gestion<br>
-                                        <span style="color:rgba(148,163,184,0.25)">Contrôle de Gestion</span>
+                                <div class="vc-back-corner vc-back-corner-light vc-bc-tl"></div>
+                                <div class="vc-back-corner vc-back-corner-light vc-bc-tr"></div>
+                                <div class="vc-back-corner vc-back-corner-light vc-bc-bl"></div>
+                                <div class="vc-back-corner vc-back-corner-light vc-bc-br"></div>
+                                <div class="vc-back-layout">
+                                    <div class="vc-back-left vc-back-left-dark">
+                                        <div class="vc-back-wordmark vc-back-wordmark-light">Contrôle de <span>Gestion</span></div>
+                                        <div class="vc-back-tagline vc-back-tagline-light">
+                                            Contrôle de Gestion Ministériel<br>
+                                            Cameroun
+                                        </div>
+                                    </div>
+                                    <div class="vc-back-right">
+                                        <img src="second_logo.svg" class="vc-back-logo-national" alt="Armoiries du Cameroun"/>
+                                        <div class="vc-ministry-block">
+                                            <div class="vc-ministry-line vc-ministry-line-light vc-ministry-line-top">Ministère des Finances</div>
+                                            <div class="vc-ministry-line vc-ministry-line-light">Secrétariat Général</div>
+                                            <div class="vc-ministry-line vc-ministry-line-light">Direction Générale du Budget</div>
+                                            <div class="vc-ministry-line vc-ministry-line-light">Division de la Réforme Budgétaire</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
