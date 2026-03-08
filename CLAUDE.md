@@ -8,13 +8,14 @@ Contrôle de Gestion is a brand identity system for public management control (C
 
 ## Key Files
 
-- `pulsera-brand-book-v10-light.html` — Main brand book (HTML + inline CSS). Canonical source for colors, typography, spacing, voice, and usage guidelines. Contains both dark and light editions.
+- `index.html` — Main brand book (HTML + inline CSS). Canonical source for colors, typography, spacing, voice, and usage guidelines. Contains both dark and light editions. Served at `/` by Netlify.
 - `v2.html` — Separate brand concept page (Tailwind CSS via CDN).
-- `logo.svg` — Brand logo (piston mark, viewBox 0 0 224 295).
-- `second_logo.svg` — Cameroon national emblem (raster-in-SVG, 960×1088).
+- `assets/logo.svg` — Brand logo (piston mark, viewBox 0 0 224 295).
+- `assets/second_logo.svg` — Cameroon national emblem (raster-in-SVG, 960×1088).
+- `assets/logo_v1.svg` — Alternate brand logo.
 - `business-card.html`, `business-card_v1.html` — Standalone business card files.
 - `brand-objects.html` — Standalone brand objects file.
-- `*.svg` — Other logo and symbol assets (`Frame.svg`, `SymbolContainer_margin.svg`, etc.).
+- `netlify.toml` — Netlify deployment config (headers, caching).
 
 ## Development
 
