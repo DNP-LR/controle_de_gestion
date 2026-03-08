@@ -982,22 +982,8 @@
         }
 
         .sid-card-showcase {
-            --sid-ink: var(--ink);
-            --sid-navy: var(--navy);
-            --sid-blue: var(--blue);
-            --sid-mid: var(--mid);
-            --sid-steel: var(--steel);
-            --sid-silver: var(--silver);
-            --sid-mist: var(--mist);
-            --sid-white: var(--white);
-            --sid-gold: var(--gold);
-            --sid-gold-lt: var(--gold-lt);
-            --sid-gold-dk: var(--gold-dk);
-            --sid-serif: 'Playfair Display', Georgia, serif;
-            --sid-sans: 'Inter', system-ui, sans-serif;
-            --sid-mono: 'Courier Prime', monospace;
-            color: var(--sid-white);
-            font-family: var(--sid-sans);
+            color: var(--white);
+            font-family: var(--sans);
             border-radius: 0;
             padding: 0;
             margin-bottom: 48px;
@@ -1020,28 +1006,27 @@
 
         .sid-card-showcase .bcard {
             width: 420px;
-            height: 240px;
-            border-radius: 10px;
+            height: 272px;
+            border-radius: 8px;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 32px 64px rgba(0, 0, 0, 0.6),
-            0 0 0 1px rgba(133, 181, 194, 0.08);
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(148, 163, 184, 0.06);
         }
 
         .sid-card-showcase .bcard-front {
-            background: linear-gradient(135deg, var(--sid-navy) 0%, var(--sid-ink) 100%);
+            background: linear-gradient(145deg, var(--navy), var(--ink));
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: 28px 32px;
+            padding: 24px 28px;
         }
 
         .sid-card-showcase .bcard-grid-overlay {
             position: absolute;
             inset: 0;
-            background-image: linear-gradient(rgba(133, 181, 194, 0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(133, 181, 194, 0.03) 1px, transparent 1px);
-            background-size: 24px 24px;
+            background-image: linear-gradient(rgba(148, 163, 184, 0.025) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(148, 163, 184, 0.025) 1px, transparent 1px);
+            background-size: 20px 20px;
             pointer-events: none;
         }
 
@@ -1050,18 +1035,18 @@
             left: 0;
             top: 0;
             bottom: 0;
-            width: 4px;
-            background: linear-gradient(to bottom, var(--sid-gold-lt), var(--sid-gold), var(--sid-gold-dk));
+            width: 3px;
+            background: linear-gradient(to bottom, var(--gold-lt), var(--gold), var(--gold-dk));
         }
 
         .sid-card-showcase .bcard-glow {
             position: absolute;
-            top: -40px;
-            right: -40px;
-            width: 160px;
-            height: 160px;
+            top: -30px;
+            right: -30px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(148, 163, 184, 0.12) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(249, 115, 22, 0.08), transparent 70%);
             pointer-events: none;
         }
 
@@ -1071,45 +1056,45 @@
             align-items: center;
             position: relative;
             z-index: 2;
-            gap: 18px;
+            gap: 12px;
         }
 
         .sid-card-showcase .brand-side {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             flex: 1 1 auto;
             min-width: 0;
         }
 
         .sid-card-showcase .brand-logo {
             display: block;
-            height: 52px;
+            height: 29px;
             width: auto;
             flex: 0 0 auto;
         }
 
         .sid-card-showcase .brand-wm {
-            font-family: var(--sid-serif);
-            font-size: 14px;
+            font-family: var(--serif);
+            font-size: 11px;
             font-weight: 600;
-            letter-spacing: 0.14em;
-            color: var(--sid-white);
-            line-height: 1.25;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+            letter-spacing: 0.12em;
+            color: var(--white);
+            line-height: 1.3;
+            text-transform: uppercase;
         }
 
         .sid-card-showcase .brand-wm span {
-            color: var(--sid-gold);
+            color: var(--gold);
         }
 
         .sid-card-showcase .brand-sub {
-            font-size: 8px;
-            letter-spacing: 0.18em;
+            font-family: var(--mono);
+            font-size: 6px;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: rgba(242, 249, 252, 0.8);
-            margin-top: 3px;
-            font-family: var(--sid-mono);
+            color: rgba(148, 163, 184, 0.45);
+            margin-top: 2px;
         }
 
         .sid-card-showcase .person-info {
@@ -1118,36 +1103,35 @@
         }
 
         .sid-card-showcase .bcard-person-name {
-            font-family: var(--sid-serif);
-            font-size: 22px;
-            font-weight: 400;
-            letter-spacing: 0.04em;
-            color: var(--sid-white);
+            font-family: var(--serif);
+            font-size: 19px;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            color: var(--white);
             line-height: 1.1;
         }
 
         .sid-card-showcase .bcard-title {
-            font-size: 8.5px;
-            letter-spacing: 0.35em;
+            font-family: var(--mono);
+            font-size: 8px;
+            letter-spacing: 0.3em;
             text-transform: uppercase;
-            color: var(--sid-gold);
-            margin-top: 6px;
-            font-family: var(--sid-mono);
+            color: var(--gold);
+            margin-top: 5px;
         }
 
         .sid-card-showcase .bcard-contact {
             position: relative;
             z-index: 2;
-            border-top: 1px solid rgba(133, 181, 194, 0.1);
-            padding-top: 12px;
+            border-top: 1px solid rgba(148, 163, 184, 0.08);
+            padding-top: 10px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4px;
-            font-family: var(--sid-mono);
-            font-size: 8px;
-            color: var(--sid-steel);
-            letter-spacing: 0.03em;
-            line-height: 1.9;
+            font-family: var(--mono);
+            font-size: 7.5px;
+            color: var(--steel);
+            letter-spacing: 0.02em;
+            line-height: 1.8;
         }
 
         .sid-card-showcase .bcard-contact .right {
@@ -1155,12 +1139,12 @@
         }
 
         .sid-card-showcase .bcard-back {
-            background: var(--sid-ink);
+            background: var(--ink);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 0;
-            border: 1px solid rgba(133, 181, 194, 0.07);
+            border: 1px solid rgba(148, 163, 184, 0.06);
         }
 
         .sid-card-showcase .back-pattern {
@@ -1168,19 +1152,19 @@
             inset: 0;
             background-image: repeating-linear-gradient(
                     45deg,
-                    rgba(226, 184, 74, 0.03),
-                    rgba(226, 184, 74, 0.03) 1px,
+                    rgba(249, 115, 22, 0.025),
+                    rgba(249, 115, 22, 0.025) 1px,
                     transparent 1px,
-                    transparent 18px
+                    transparent 16px
             );
         }
 
         .sid-card-showcase .back-grid {
             position: absolute;
             inset: 0;
-            background-image: linear-gradient(rgba(133, 181, 194, 0.025) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(133, 181, 194, 0.025) 1px, transparent 1px);
-            background-size: 24px 24px;
+            background-image: linear-gradient(rgba(148, 163, 184, 0.02) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(148, 163, 184, 0.02) 1px, transparent 1px);
+            background-size: 20px 20px;
         }
 
         .sid-card-showcase .back-left {
@@ -1189,34 +1173,44 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: 12px;
-            padding: 0 34px 0 40px;
-            border-right: 1px solid rgba(226, 184, 74, 0.15);
-            flex: 0 0 56%;
+            gap: 8px;
+            padding: 0 28px 0 32px;
+            flex: 0 0 55%;
+        }
+
+        .sid-card-showcase .back-left::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            width: 1px;
+            height: 60px;
+            background: rgba(249, 115, 22, 0.12);
+            transform: translateY(-50%);
         }
 
         .sid-card-showcase .back-wordmark {
-            font-family: var(--sid-serif);
-            font-size: 20px;
-            font-weight: 500;
-            letter-spacing: 0.16em;
-            color: var(--sid-white);
+            font-family: var(--serif);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            color: var(--white);
             text-align: left;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+            text-transform: uppercase;
         }
 
         .sid-card-showcase .back-wordmark span {
-            color: var(--sid-gold);
+            color: var(--gold);
         }
 
         .sid-card-showcase .back-tagline {
-            font-family: var(--sid-mono);
-            font-size: 7px;
-            letter-spacing: 0.18em;
+            font-family: var(--mono);
+            font-size: 6px;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
-            color: rgba(242, 249, 252, 0.68);
+            color: rgba(148, 163, 184, 0.4);
             text-align: left;
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
         .sid-card-showcase .institution-side {
@@ -1224,10 +1218,9 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 4px;
-            min-width: 88px;
-            padding: 0 0 0 10px;
-            transform: translateY(-4px);
+            gap: 3px;
+            min-width: 60px;
+            padding: 0 0 0 8px;
             position: relative;
         }
 
@@ -1237,24 +1230,23 @@
             left: 0;
             top: 50%;
             width: 1px;
-            height: 42px;
-            background: rgba(226, 184, 74, 0.12);
+            height: 32px;
+            background: rgba(249, 115, 22, 0.1);
             transform: translateY(-50%);
         }
 
         .sid-card-showcase .logo-national {
-            height: 46px;
+            height: 32px;
             width: auto;
-            mix-blend-mode: screen;
-            filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.35)) contrast(1.08) brightness(1.04);
+            filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.4));
         }
 
         .sid-card-showcase .institution-caption {
-            font-family: var(--sid-mono);
-            font-size: 6px;
-            letter-spacing: 0.18em;
+            font-family: var(--mono);
+            font-size: 5px;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: rgba(242, 249, 252, 0.72);
+            color: rgba(148, 163, 184, 0.5);
             line-height: 1.4;
             text-align: center;
         }
@@ -1263,36 +1255,35 @@
             position: relative;
             z-index: 1;
             display: flex;
-            flex: 0 0 44%;
+            flex: 0 0 45%;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 9px;
-            padding: 0 24px;
+            gap: 8px;
+            padding: 0 20px;
         }
 
         .sid-card-showcase .back-logo-national {
-            height: 72px;
+            height: 50px;
             width: auto;
-            mix-blend-mode: screen;
-            filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35)) contrast(1.08) brightness(1.04);
+            filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.3));
         }
 
         .sid-card-showcase .back-institution-caption {
-            font-family: var(--sid-mono);
-            font-size: 6px;
-            letter-spacing: 0.16em;
+            font-family: var(--mono);
+            font-size: 5px;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: rgba(242, 249, 252, 0.62);
+            color: rgba(148, 163, 184, 0.45);
             text-align: center;
             line-height: 1.5;
         }
 
         .sid-card-showcase .back-right .ministry-block {
             align-items: center;
-            max-width: 172px;
-            gap: 4px;
-            padding-top: 9px;
+            max-width: 160px;
+            gap: 2px;
+            padding-top: 6px;
         }
 
         .sid-card-showcase .back-right .ministry-line {
@@ -1303,65 +1294,64 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            gap: 2px;
-            max-width: 150px;
+            gap: 1px;
+            max-width: 140px;
         }
 
         .sid-card-showcase .ministry-line {
-            font-family: var(--sid-mono);
-            font-size: 6.5px;
-            letter-spacing: 0.05em;
+            font-family: var(--mono);
+            font-size: 5.5px;
+            letter-spacing: 0.04em;
             text-transform: uppercase;
-            color: rgba(242, 249, 252, 0.82);
-            line-height: 1.45;
+            color: rgba(148, 163, 184, 0.55);
+            line-height: 1.5;
             text-align: left;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
         }
 
         .sid-card-showcase .ministry-line.top {
-            font-size: 7.5px;
-            color: var(--sid-gold);
+            font-size: 6px;
+            color: rgba(249, 115, 22, 0.65);
             font-weight: 700;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.06em;
         }
 
         .sid-card-showcase .back-corner {
             position: absolute;
-            width: 16px;
-            height: 16px;
-            border-color: rgba(226, 184, 74, 0.2);
+            width: 12px;
+            height: 12px;
+            border-color: rgba(249, 115, 22, 0.15);
             border-style: solid;
         }
 
         .sid-card-showcase .bc-tl {
-            top: 14px;
-            left: 14px;
+            top: 12px;
+            left: 12px;
             border-width: 1px 0 0 1px;
         }
 
         .sid-card-showcase .bc-tr {
-            top: 14px;
-            right: 14px;
+            top: 12px;
+            right: 12px;
             border-width: 1px 1px 0 0;
         }
 
         .sid-card-showcase .bc-bl {
-            bottom: 14px;
-            left: 14px;
+            bottom: 12px;
+            left: 12px;
             border-width: 0 0 1px 1px;
         }
 
         .sid-card-showcase .bc-br {
-            bottom: 14px;
-            right: 14px;
+            bottom: 12px;
+            right: 12px;
             border-width: 0 1px 1px 0;
         }
 
         .sid-card-showcase .spec-note {
-            font-family: var(--sid-mono);
-            font-size: 9px;
-            color: rgba(133, 181, 194, 0.3);
-            letter-spacing: 0.2em;
+            font-family: var(--mono);
+            font-size: 8px;
+            color: rgba(148, 163, 184, 0.25);
+            letter-spacing: 0.15em;
             text-transform: uppercase;
             text-align: center;
         }
@@ -3496,10 +3486,10 @@
             <div class="info-card">
                 <div class="info-card-label">Typography on Card</div>
                 <div class="info-card-body" style="font-size:11px;line-height:2">
-                    Brand name: Outfit 800<br>
-                    Person name: Outfit 600<br>
-                    Job title: Inter 400 · all caps · +0.35em<br>
-                    Contact: Inter 300 · 9px
+                    Brand name: Outfit 600 · 11px<br>
+                    Person name: Outfit 600 · 19px<br>
+                    Job title: JetBrains Mono 400 · 8px · +0.3em<br>
+                    Contact: JetBrains Mono 400 · 7.5px
                 </div>
             </div>
             <div class="info-card">
@@ -3787,9 +3777,9 @@
 
             .vc-brand-wm {
                 font-family: var(--serif);
-                font-size: 11px;
+                font-size: 8px;
                 font-weight: 500;
-                letter-spacing: 0.2em;
+                letter-spacing: 0.12em;
             }
 
             .vc-brand-light {
@@ -3811,11 +3801,11 @@
             }
 
             .vc-tagline {
-                font-size: 6px;
-                letter-spacing: 0.35em;
+                font-size: 4.5px;
+                letter-spacing: 0.2em;
                 text-transform: uppercase;
-                margin-top: 2px;
-                margin-left: 26px;
+                margin-top: 1px;
+                margin-left: 0;
             }
 
             .vc-tagline-lt {
@@ -3833,10 +3823,10 @@
 
             .vc-card-inner .vc-name {
                 font-family: var(--serif);
-                font-size: 14px !important;
+                font-size: 10px !important;
                 font-weight: 600;
                 line-height: 1.2;
-                margin-bottom: 3px;
+                margin-bottom: 2px;
             }
 
             .vc-name-lt {
@@ -3848,8 +3838,8 @@
             }
 
             .vc-role {
-                font-size: 6.5px;
-                letter-spacing: 0.3em;
+                font-size: 5.5px;
+                letter-spacing: 0.2em;
                 text-transform: uppercase;
                 font-weight: 600;
                 margin-bottom: 1px;
@@ -3864,8 +3854,8 @@
             }
 
             .vc-role-sub {
-                font-size: 6px;
-                letter-spacing: 0.15em;
+                font-size: 4.5px;
+                letter-spacing: 0.1em;
                 color: rgba(148, 163, 184, 0.55);
                 font-style: italic;
                 margin-top: 1px;
@@ -3878,18 +3868,18 @@
 
             .vc-info-line {
                 display: flex;
-                gap: 7px;
+                gap: 5px;
                 align-items: baseline;
-                font-size: 8px;
-                line-height: 1.7;
+                font-size: 6.5px;
+                line-height: 1.6;
             }
 
             .vc-info-key {
-                font-size: 6px;
-                letter-spacing: 0.25em;
+                font-size: 5px;
+                letter-spacing: 0.15em;
                 font-weight: 700;
                 flex-shrink: 0;
-                width: 10px;
+                width: 8px;
             }
 
             .vc-key-gold {
@@ -3962,7 +3952,7 @@
             .vc-card-structured {
                 position: absolute;
                 inset: 0;
-                padding: 18px 22px 16px;
+                padding: 14px 16px 12px;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
@@ -3972,16 +3962,23 @@
             .vc-header-row {
                 display: flex;
                 justify-content: space-between;
-                align-items: flex-start;
-                gap: 12px;
+                align-items: center;
+                gap: 10px;
             }
 
             .vc-brand-side {
                 display: flex;
-                align-items: flex-start;
-                gap: 8px;
+                align-items: center;
+                gap: 6px;
                 min-width: 0;
                 flex: 1 1 auto;
+            }
+
+            .vc-brand-logo {
+                display: block;
+                height: 22px;
+                width: auto;
+                flex: 0 0 auto;
             }
 
             .vc-brand-stack {
@@ -3990,11 +3987,11 @@
 
             .vc-brand-sub {
                 font-family: var(--mono);
-                font-size: 5.5px;
-                letter-spacing: 0.18em;
+                font-size: 4.5px;
+                letter-spacing: 0.1em;
                 text-transform: uppercase;
-                margin-top: 2px;
-                line-height: 1.5;
+                margin-top: 1px;
+                line-height: 1.4;
             }
 
             .vc-brand-sub-light {
@@ -4006,24 +4003,53 @@
             }
 
             .vc-institution-side {
-                min-width: 88px;
+                min-width: 60px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                gap: 0;
-                padding: 6px 0 0 10px;
+                gap: 3px;
+                padding: 0 0 0 8px;
+                position: relative;
             }
 
             .vc-institution-side-light,
             .vc-institution-side-dark {
-                border-left: 1px solid rgba(226, 184, 74, 0.12);
+                border-left: none;
+            }
+
+            .vc-institution-side::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 50%;
+                width: 1px;
+                height: 28px;
+                background: rgba(249, 115, 22, 0.12);
+                transform: translateY(-50%);
             }
 
             .vc-logo-national {
-                height: 52px;
+                height: 24px;
                 width: auto;
                 object-fit: contain;
+            }
+
+            .vc-institution-caption {
+                font-family: var(--mono);
+                font-size: 4.5px;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                line-height: 1.3;
+                text-align: center;
+            }
+
+            .vc-institution-caption-light {
+                color: rgba(241, 245, 249, 0.72);
+            }
+
+            .vc-institution-caption-dark {
+                color: rgba(26, 29, 35, 0.62);
             }
 
             .vc-back-layout {
@@ -4035,22 +4061,38 @@
 
             .vc-back-left {
                 flex: 0 0 56%;
-                padding: 0 24px 0 28px;
+                padding: 0 16px 0 20px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 gap: 8px;
+                position: relative;
             }
 
             .vc-back-left-dark {
                 border-right: none;
             }
 
+            .vc-back-left::after {
+                content: "";
+                position: absolute;
+                right: 0;
+                top: 50%;
+                width: 1px;
+                height: 50px;
+                transform: translateY(-50%);
+            }
+
+            .vc-card-back .vc-back-left::after,
+            .vc-card-back-parch .vc-back-left::after {
+                background: rgba(226, 184, 74, 0.15);
+            }
+
             .vc-back-wordmark {
                 font-family: var(--serif);
-                font-size: 14px;
+                font-size: 13px;
                 font-weight: 500;
-                letter-spacing: 0.16em;
+                letter-spacing: 0.1em;
                 line-height: 1.25;
             }
 
@@ -4065,9 +4107,9 @@
             .vc-back-tagline {
                 font-family: var(--mono);
                 font-size: 5px;
-                letter-spacing: 0.18em;
+                letter-spacing: 0.1em;
                 text-transform: uppercase;
-                line-height: 1.7;
+                line-height: 1.6;
             }
 
             .vc-back-tagline-light {
@@ -4076,7 +4118,7 @@
 
             .vc-back-right {
                 flex: 0 0 44%;
-                padding: 0 17px;
+                padding: 0 14px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -4085,7 +4127,7 @@
             }
 
             .vc-back-logo-national {
-                height: 51px;
+                height: 40px;
                 width: auto;
                 object-fit: contain;
             }
@@ -4134,16 +4176,17 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                gap: 1px;
-                max-width: 122px;
+                gap: 2px;
+                max-width: 120px;
+                padding-top: 4px;
             }
 
             .vc-ministry-line {
                 font-family: var(--mono);
-                font-size: 4.6px;
-                letter-spacing: 0.05em;
+                font-size: 4.5px;
+                letter-spacing: 0.04em;
                 text-transform: uppercase;
-                line-height: 1.55;
+                line-height: 1.4;
                 text-align: center;
             }
 
@@ -4153,7 +4196,7 @@
 
             .vc-ministry-line-light.vc-ministry-line-top {
                 color: rgba(249, 115, 22, 0.72);
-                font-size: 5.3px;
+                font-size: 5px;
                 font-weight: 700;
             }
 
@@ -4226,14 +4269,20 @@
                             <div class="vc-card-structured">
                                 <div class="vc-header-row">
                                     <div class="vc-brand-side">
-                                        <img src="logo.svg" width="14" height="18" alt="Contrôle de Gestion"/>
+                                        <img src="logo.svg" class="vc-brand-logo" alt="Contrôle de Gestion"/>
                                         <div class="vc-brand-stack">
                                             <div class="vc-brand-wm vc-brand-light">Contrôle de <em>Gestion</em></div>
-                                            <div class="vc-brand-sub vc-brand-sub-light">Contrôle de Gestion Ministériel</div>
+                                            <div class="vc-brand-sub vc-brand-sub-light">Contrôle de Gestion
+                                                Ministériel
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="vc-institution-side vc-institution-side-light">
-                                        <img src="second_logo.svg" class="vc-logo-national" alt="Armoiries du Cameroun"/>
+                                        <img src="second_logo.svg" class="vc-logo-national"
+                                             alt="Armoiries du Cameroun"/>
+                                        <div class="vc-institution-caption vc-institution-caption-light">Armoiries du
+                                            Cameroun
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="vc-name-area">
@@ -4263,19 +4312,27 @@
                             <div class="vc-back-corner vc-back-corner-light vc-bc-br"></div>
                             <div class="vc-back-layout">
                                 <div class="vc-back-left vc-back-left-dark">
-                                    <div class="vc-back-wordmark vc-back-wordmark-light">Contrôle de <span>Gestion</span></div>
+                                    <div class="vc-back-wordmark vc-back-wordmark-light">Contrôle de
+                                        <span>Gestion</span></div>
                                     <div class="vc-back-tagline vc-back-tagline-light">
                                         Contrôle de Gestion Ministériel<br>
                                         Cameroun
                                     </div>
                                 </div>
                                 <div class="vc-back-right">
-                                    <img src="second_logo.svg" class="vc-back-logo-national" alt="Armoiries du Cameroun"/>
+                                    <img src="second_logo.svg" class="vc-back-logo-national"
+                                         alt="Armoiries du Cameroun"/>
                                     <div class="vc-ministry-block">
-                                        <div class="vc-ministry-line vc-ministry-line-light vc-ministry-line-top">Ministère des Finances</div>
+                                        <div class="vc-ministry-line vc-ministry-line-light vc-ministry-line-top">
+                                            Ministère des Finances
+                                        </div>
                                         <div class="vc-ministry-line vc-ministry-line-light">Secrétariat Général</div>
-                                        <div class="vc-ministry-line vc-ministry-line-light">Direction Générale du Budget</div>
-                                        <div class="vc-ministry-line vc-ministry-line-light">Division de la Réforme Budgétaire</div>
+                                        <div class="vc-ministry-line vc-ministry-line-light">Direction Générale du
+                                            Budget
+                                        </div>
+                                        <div class="vc-ministry-line vc-ministry-line-light">Division de la Réforme
+                                            Budgétaire
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -4299,14 +4356,20 @@
                             <div class="vc-card-structured">
                                 <div class="vc-header-row">
                                     <div class="vc-brand-side">
-                                        <img src="logo.svg" width="14" height="18" alt="Contrôle de Gestion"/>
+                                        <img src="logo.svg" class="vc-brand-logo" alt="Contrôle de Gestion"/>
                                         <div class="vc-brand-stack">
                                             <div class="vc-brand-wm vc-brand-dark">Contrôle de <em>Gestion</em></div>
-                                            <div class="vc-brand-sub vc-brand-sub-dark">Contrôle de Gestion Ministériel</div>
+                                            <div class="vc-brand-sub vc-brand-sub-dark">Contrôle de Gestion
+                                                Ministériel
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="vc-institution-side vc-institution-side-dark">
-                                        <img src="second_logo.svg" class="vc-logo-national" alt="Armoiries du Cameroun"/>
+                                        <img src="second_logo.svg" class="vc-logo-national"
+                                             alt="Armoiries du Cameroun"/>
+                                        <div class="vc-institution-caption vc-institution-caption-dark">Armoiries du
+                                            Cameroun
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="vc-name-area">
@@ -4336,19 +4399,27 @@
                             <div class="vc-back-corner vc-back-corner-dark vc-bc-br"></div>
                             <div class="vc-back-layout">
                                 <div class="vc-back-left vc-back-left-dark">
-                                    <div class="vc-back-wordmark vc-back-wordmark-light">Contrôle de <span>Gestion</span></div>
+                                    <div class="vc-back-wordmark vc-back-wordmark-light">Contrôle de
+                                        <span>Gestion</span></div>
                                     <div class="vc-back-tagline vc-back-tagline-light">
                                         Contrôle de Gestion Ministériel<br>
                                         Cameroun
                                     </div>
                                 </div>
                                 <div class="vc-back-right">
-                                    <img src="second_logo.svg" class="vc-back-logo-national" alt="Armoiries du Cameroun"/>
+                                    <img src="second_logo.svg" class="vc-back-logo-national"
+                                         alt="Armoiries du Cameroun"/>
                                     <div class="vc-ministry-block">
-                                        <div class="vc-ministry-line vc-ministry-line-light vc-ministry-line-top">Ministère des Finances</div>
+                                        <div class="vc-ministry-line vc-ministry-line-light vc-ministry-line-top">
+                                            Ministère des Finances
+                                        </div>
                                         <div class="vc-ministry-line vc-ministry-line-light">Secrétariat Général</div>
-                                        <div class="vc-ministry-line vc-ministry-line-light">Direction Générale du Budget</div>
-                                        <div class="vc-ministry-line vc-ministry-line-light">Division de la Réforme Budgétaire</div>
+                                        <div class="vc-ministry-line vc-ministry-line-light">Direction Générale du
+                                            Budget
+                                        </div>
+                                        <div class="vc-ministry-line vc-ministry-line-light">Division de la Réforme
+                                            Budgétaire
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -4372,14 +4443,20 @@
                             <div class="vc-card-structured">
                                 <div class="vc-header-row">
                                     <div class="vc-brand-side">
-                                        <img src="logo.svg" width="14" height="18" alt="Contrôle de Gestion"/>
+                                        <img src="logo.svg" class="vc-brand-logo" alt="Contrôle de Gestion"/>
                                         <div class="vc-brand-stack">
                                             <div class="vc-brand-wm vc-brand-light">Contrôle de <em>Gestion</em></div>
-                                            <div class="vc-brand-sub vc-brand-sub-light">Contrôle de Gestion Ministériel</div>
+                                            <div class="vc-brand-sub vc-brand-sub-light">Contrôle de Gestion
+                                                Ministériel
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="vc-institution-side vc-institution-side-light">
-                                        <img src="second_logo.svg" class="vc-logo-national" alt="Armoiries du Cameroun"/>
+                                        <img src="second_logo.svg" class="vc-logo-national"
+                                             alt="Armoiries du Cameroun"/>
+                                        <div class="vc-institution-caption vc-institution-caption-light">Armoiries du
+                                            Cameroun
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="vc-name-area">
@@ -4415,19 +4492,27 @@
                             <div class="vc-back-corner vc-back-corner-light vc-bc-br"></div>
                             <div class="vc-back-layout">
                                 <div class="vc-back-left vc-back-left-dark">
-                                    <div class="vc-back-wordmark vc-back-wordmark-light">Contrôle de <span>Gestion</span></div>
+                                    <div class="vc-back-wordmark vc-back-wordmark-light">Contrôle de
+                                        <span>Gestion</span></div>
                                     <div class="vc-back-tagline vc-back-tagline-light">
                                         Contrôle de Gestion Ministériel<br>
                                         Cameroun
                                     </div>
                                 </div>
                                 <div class="vc-back-right">
-                                    <img src="second_logo.svg" class="vc-back-logo-national" alt="Armoiries du Cameroun"/>
+                                    <img src="second_logo.svg" class="vc-back-logo-national"
+                                         alt="Armoiries du Cameroun"/>
                                     <div class="vc-ministry-block">
-                                        <div class="vc-ministry-line vc-ministry-line-light vc-ministry-line-top">Ministère des Finances</div>
+                                        <div class="vc-ministry-line vc-ministry-line-light vc-ministry-line-top">
+                                            Ministère des Finances
+                                        </div>
                                         <div class="vc-ministry-line vc-ministry-line-light">Secrétariat Général</div>
-                                        <div class="vc-ministry-line vc-ministry-line-light">Direction Générale du Budget</div>
-                                        <div class="vc-ministry-line vc-ministry-line-light">Division de la Réforme Budgétaire</div>
+                                        <div class="vc-ministry-line vc-ministry-line-light">Direction Générale du
+                                            Budget
+                                        </div>
+                                        <div class="vc-ministry-line vc-ministry-line-light">Division de la Réforme
+                                            Budgétaire
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -10037,9 +10122,9 @@
 
                 .vc-brand-wm {
                     font-family: var(--serif);
-                    font-size: 11px;
+                    font-size: 8px;
                     font-weight: 500;
-                    letter-spacing: 0.2em;
+                    letter-spacing: 0.12em;
                 }
 
                 .vc-brand-light {
@@ -10061,11 +10146,11 @@
                 }
 
                 .vc-tagline {
-                    font-size: 6px;
-                    letter-spacing: 0.35em;
+                    font-size: 4.5px;
+                    letter-spacing: 0.2em;
                     text-transform: uppercase;
-                    margin-top: 2px;
-                    margin-left: 26px;
+                    margin-top: 1px;
+                    margin-left: 0;
                 }
 
                 .vc-tagline-lt {
@@ -10083,10 +10168,10 @@
 
                 .vc-card-inner .vc-name {
                     font-family: var(--serif);
-                    font-size: 14px !important;
+                    font-size: 10px !important;
                     font-weight: 600;
                     line-height: 1.2;
-                    margin-bottom: 3px;
+                    margin-bottom: 2px;
                 }
 
                 .vc-name-lt {
@@ -10098,8 +10183,8 @@
                 }
 
                 .vc-role {
-                    font-size: 6.5px;
-                    letter-spacing: 0.3em;
+                    font-size: 5.5px;
+                    letter-spacing: 0.2em;
                     text-transform: uppercase;
                     font-weight: 600;
                     margin-bottom: 1px;
@@ -10114,8 +10199,8 @@
                 }
 
                 .vc-role-sub {
-                    font-size: 6px;
-                    letter-spacing: 0.15em;
+                    font-size: 4.5px;
+                    letter-spacing: 0.1em;
                     color: rgba(148, 163, 184, 0.55);
                     font-style: italic;
                     margin-top: 1px;
@@ -10128,18 +10213,18 @@
 
                 .vc-info-line {
                     display: flex;
-                    gap: 7px;
+                    gap: 5px;
                     align-items: baseline;
-                    font-size: 8px;
-                    line-height: 1.7;
+                    font-size: 6.5px;
+                    line-height: 1.6;
                 }
 
                 .vc-info-key {
-                    font-size: 6px;
-                    letter-spacing: 0.25em;
+                    font-size: 5px;
+                    letter-spacing: 0.15em;
                     font-weight: 700;
                     flex-shrink: 0;
-                    width: 10px;
+                    width: 8px;
                 }
 
                 .vc-key-gold {
@@ -10212,7 +10297,7 @@
                 .vc-card-structured {
                     position: absolute;
                     inset: 0;
-                    padding: 18px 22px 16px;
+                    padding: 14px 16px 12px;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
@@ -10222,16 +10307,23 @@
                 .vc-header-row {
                     display: flex;
                     justify-content: space-between;
-                    align-items: flex-start;
-                    gap: 12px;
+                    align-items: center;
+                    gap: 10px;
                 }
 
                 .vc-brand-side {
                     display: flex;
-                    align-items: flex-start;
-                    gap: 8px;
+                    align-items: center;
+                    gap: 6px;
                     min-width: 0;
                     flex: 1 1 auto;
+                }
+
+                .vc-brand-logo {
+                    display: block;
+                    height: 22px;
+                    width: auto;
+                    flex: 0 0 auto;
                 }
 
                 .vc-brand-stack {
@@ -10240,11 +10332,11 @@
 
                 .vc-brand-sub {
                     font-family: var(--mono);
-                    font-size: 5.5px;
-                    letter-spacing: 0.18em;
+                    font-size: 4.5px;
+                    letter-spacing: 0.1em;
                     text-transform: uppercase;
-                    margin-top: 2px;
-                    line-height: 1.5;
+                    margin-top: 1px;
+                    line-height: 1.4;
                 }
 
                 .vc-brand-sub-light {
@@ -10256,24 +10348,53 @@
                 }
 
                 .vc-institution-side {
-                    min-width: 88px;
+                    min-width: 60px;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     justify-content: center;
-                    gap: 0;
-                    padding: 6px 0 0 10px;
+                    gap: 3px;
+                    padding: 0 0 0 8px;
+                    position: relative;
                 }
 
                 .vc-institution-side-light,
                 .vc-institution-side-dark {
-                    border-left: 1px solid rgba(226, 184, 74, 0.12);
+                    border-left: none;
+                }
+
+                .vc-institution-side::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    width: 1px;
+                    height: 28px;
+                    background: rgba(249, 115, 22, 0.12);
+                    transform: translateY(-50%);
                 }
 
                 .vc-logo-national {
-                    height: 52px;
+                    height: 24px;
                     width: auto;
                     object-fit: contain;
+                }
+
+                .vc-institution-caption {
+                    font-family: var(--mono);
+                    font-size: 4.5px;
+                    letter-spacing: 0.1em;
+                    text-transform: uppercase;
+                    line-height: 1.3;
+                    text-align: center;
+                }
+
+                .vc-institution-caption-light {
+                    color: rgba(241, 245, 249, 0.72);
+                }
+
+                .vc-institution-caption-dark {
+                    color: rgba(26, 29, 35, 0.62);
                 }
 
                 .vc-back-layout {
@@ -10285,22 +10406,38 @@
 
                 .vc-back-left {
                     flex: 0 0 56%;
-                    padding: 0 24px 0 28px;
+                    padding: 0 16px 0 20px;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     gap: 8px;
+                    position: relative;
                 }
 
                 .vc-back-left-dark {
                     border-right: none;
                 }
 
+                .vc-back-left::after {
+                    content: "";
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    width: 1px;
+                    height: 50px;
+                    transform: translateY(-50%);
+                }
+
+                .vc-card-back .vc-back-left::after,
+                .vc-card-back-parch .vc-back-left::after {
+                    background: rgba(226, 184, 74, 0.15);
+                }
+
                 .vc-back-wordmark {
                     font-family: var(--serif);
-                    font-size: 14px;
+                    font-size: 13px;
                     font-weight: 500;
-                    letter-spacing: 0.16em;
+                    letter-spacing: 0.1em;
                     line-height: 1.25;
                 }
 
@@ -10315,9 +10452,9 @@
                 .vc-back-tagline {
                     font-family: var(--mono);
                     font-size: 5px;
-                    letter-spacing: 0.18em;
+                    letter-spacing: 0.1em;
                     text-transform: uppercase;
-                    line-height: 1.7;
+                    line-height: 1.6;
                 }
 
                 .vc-back-tagline-light {
@@ -10326,7 +10463,7 @@
 
                 .vc-back-right {
                     flex: 0 0 44%;
-                    padding: 0 17px;
+                    padding: 0 14px;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
@@ -10335,7 +10472,7 @@
                 }
 
                 .vc-back-logo-national {
-                    height: 51px;
+                    height: 40px;
                     width: auto;
                     object-fit: contain;
                 }
@@ -10384,16 +10521,17 @@
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    gap: 1px;
-                    max-width: 122px;
+                    gap: 2px;
+                    max-width: 120px;
+                    padding-top: 4px;
                 }
 
                 .vc-ministry-line {
                     font-family: var(--mono);
-                    font-size: 4.6px;
-                    letter-spacing: 0.05em;
+                    font-size: 4.5px;
+                    letter-spacing: 0.04em;
                     text-transform: uppercase;
-                    line-height: 1.55;
+                    line-height: 1.4;
                     text-align: center;
                 }
 
@@ -10403,7 +10541,7 @@
 
                 .vc-ministry-line-light.vc-ministry-line-top {
                     color: rgba(249, 115, 22, 0.72);
-                    font-size: 5.3px;
+                    font-size: 5px;
                     font-weight: 700;
                 }
 
@@ -10476,14 +10614,21 @@
                                 <div class="vc-card-structured">
                                     <div class="vc-header-row">
                                         <div class="vc-brand-side">
-                                            <img src="logo.svg" width="14" height="18" alt="Contrôle de Gestion"/>
+                                            <img src="logo.svg" class="vc-brand-logo" alt="Contrôle de Gestion"/>
                                             <div class="vc-brand-stack">
-                                                <div class="vc-brand-wm vc-brand-light">Contrôle de <em>Gestion</em></div>
-                                                <div class="vc-brand-sub vc-brand-sub-light">Contrôle de Gestion Ministériel</div>
+                                                <div class="vc-brand-wm vc-brand-light">Contrôle de <em>Gestion</em>
+                                                </div>
+                                                <div class="vc-brand-sub vc-brand-sub-light">Contrôle de Gestion
+                                                    Ministériel
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="vc-institution-side vc-institution-side-light">
-                                            <img src="second_logo.svg" class="vc-logo-national" alt="Armoiries du Cameroun"/>
+                                            <img src="second_logo.svg" class="vc-logo-national"
+                                                 alt="Armoiries du Cameroun"/>
+                                            <div class="vc-institution-caption vc-institution-caption-light">Armoiries
+                                                du Cameroun
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="vc-name-area">
@@ -10513,19 +10658,28 @@
                                 <div class="vc-back-corner vc-back-corner-light vc-bc-br"></div>
                                 <div class="vc-back-layout">
                                     <div class="vc-back-left vc-back-left-dark">
-                                        <div class="vc-back-wordmark vc-back-wordmark-light">Contrôle de <span>Gestion</span></div>
+                                        <div class="vc-back-wordmark vc-back-wordmark-light">Contrôle de
+                                            <span>Gestion</span></div>
                                         <div class="vc-back-tagline vc-back-tagline-light">
                                             Contrôle de Gestion Ministériel<br>
                                             Cameroun
                                         </div>
                                     </div>
                                     <div class="vc-back-right">
-                                        <img src="second_logo.svg" class="vc-back-logo-national" alt="Armoiries du Cameroun"/>
+                                        <img src="second_logo.svg" class="vc-back-logo-national"
+                                             alt="Armoiries du Cameroun"/>
                                         <div class="vc-ministry-block">
-                                            <div class="vc-ministry-line vc-ministry-line-light vc-ministry-line-top">Ministère des Finances</div>
-                                            <div class="vc-ministry-line vc-ministry-line-light">Secrétariat Général</div>
-                                            <div class="vc-ministry-line vc-ministry-line-light">Direction Générale du Budget</div>
-                                            <div class="vc-ministry-line vc-ministry-line-light">Division de la Réforme Budgétaire</div>
+                                            <div class="vc-ministry-line vc-ministry-line-light vc-ministry-line-top">
+                                                Ministère des Finances
+                                            </div>
+                                            <div class="vc-ministry-line vc-ministry-line-light">Secrétariat Général
+                                            </div>
+                                            <div class="vc-ministry-line vc-ministry-line-light">Direction Générale du
+                                                Budget
+                                            </div>
+                                            <div class="vc-ministry-line vc-ministry-line-light">Division de la Réforme
+                                                Budgétaire
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -10549,14 +10703,21 @@
                                 <div class="vc-card-structured">
                                     <div class="vc-header-row">
                                         <div class="vc-brand-side">
-                                            <img src="logo.svg" width="14" height="18" alt="Contrôle de Gestion"/>
+                                            <img src="logo.svg" class="vc-brand-logo" alt="Contrôle de Gestion"/>
                                             <div class="vc-brand-stack">
-                                                <div class="vc-brand-wm vc-brand-dark">Contrôle de <em>Gestion</em></div>
-                                                <div class="vc-brand-sub vc-brand-sub-dark">Contrôle de Gestion Ministériel</div>
+                                                <div class="vc-brand-wm vc-brand-dark">Contrôle de <em>Gestion</em>
+                                                </div>
+                                                <div class="vc-brand-sub vc-brand-sub-dark">Contrôle de Gestion
+                                                    Ministériel
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="vc-institution-side vc-institution-side-dark">
-                                            <img src="second_logo.svg" class="vc-logo-national" alt="Armoiries du Cameroun"/>
+                                            <img src="second_logo.svg" class="vc-logo-national"
+                                                 alt="Armoiries du Cameroun"/>
+                                            <div class="vc-institution-caption vc-institution-caption-dark">Armoiries du
+                                                Cameroun
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="vc-name-area">
@@ -10586,19 +10747,28 @@
                                 <div class="vc-back-corner vc-back-corner-dark vc-bc-br"></div>
                                 <div class="vc-back-layout">
                                     <div class="vc-back-left vc-back-left-dark">
-                                        <div class="vc-back-wordmark vc-back-wordmark-light">Contrôle de <span>Gestion</span></div>
+                                        <div class="vc-back-wordmark vc-back-wordmark-light">Contrôle de
+                                            <span>Gestion</span></div>
                                         <div class="vc-back-tagline vc-back-tagline-light">
                                             Contrôle de Gestion Ministériel<br>
                                             Cameroun
                                         </div>
                                     </div>
                                     <div class="vc-back-right">
-                                        <img src="second_logo.svg" class="vc-back-logo-national" alt="Armoiries du Cameroun"/>
+                                        <img src="second_logo.svg" class="vc-back-logo-national"
+                                             alt="Armoiries du Cameroun"/>
                                         <div class="vc-ministry-block">
-                                            <div class="vc-ministry-line vc-ministry-line-light vc-ministry-line-top">Ministère des Finances</div>
-                                            <div class="vc-ministry-line vc-ministry-line-light">Secrétariat Général</div>
-                                            <div class="vc-ministry-line vc-ministry-line-light">Direction Générale du Budget</div>
-                                            <div class="vc-ministry-line vc-ministry-line-light">Division de la Réforme Budgétaire</div>
+                                            <div class="vc-ministry-line vc-ministry-line-light vc-ministry-line-top">
+                                                Ministère des Finances
+                                            </div>
+                                            <div class="vc-ministry-line vc-ministry-line-light">Secrétariat Général
+                                            </div>
+                                            <div class="vc-ministry-line vc-ministry-line-light">Direction Générale du
+                                                Budget
+                                            </div>
+                                            <div class="vc-ministry-line vc-ministry-line-light">Division de la Réforme
+                                                Budgétaire
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -10622,14 +10792,21 @@
                                 <div class="vc-card-structured">
                                     <div class="vc-header-row">
                                         <div class="vc-brand-side">
-                                            <img src="logo.svg" width="14" height="18" alt="Contrôle de Gestion"/>
+                                            <img src="logo.svg" class="vc-brand-logo" alt="Contrôle de Gestion"/>
                                             <div class="vc-brand-stack">
-                                                <div class="vc-brand-wm vc-brand-light">Contrôle de <em>Gestion</em></div>
-                                                <div class="vc-brand-sub vc-brand-sub-light">Contrôle de Gestion Ministériel</div>
+                                                <div class="vc-brand-wm vc-brand-light">Contrôle de <em>Gestion</em>
+                                                </div>
+                                                <div class="vc-brand-sub vc-brand-sub-light">Contrôle de Gestion
+                                                    Ministériel
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="vc-institution-side vc-institution-side-light">
-                                            <img src="second_logo.svg" class="vc-logo-national" alt="Armoiries du Cameroun"/>
+                                            <img src="second_logo.svg" class="vc-logo-national"
+                                                 alt="Armoiries du Cameroun"/>
+                                            <div class="vc-institution-caption vc-institution-caption-light">Armoiries
+                                                du Cameroun
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="vc-name-area">
@@ -10668,19 +10845,28 @@
                                 <div class="vc-back-corner vc-back-corner-light vc-bc-br"></div>
                                 <div class="vc-back-layout">
                                     <div class="vc-back-left vc-back-left-dark">
-                                        <div class="vc-back-wordmark vc-back-wordmark-light">Contrôle de <span>Gestion</span></div>
+                                        <div class="vc-back-wordmark vc-back-wordmark-light">Contrôle de
+                                            <span>Gestion</span></div>
                                         <div class="vc-back-tagline vc-back-tagline-light">
                                             Contrôle de Gestion Ministériel<br>
                                             Cameroun
                                         </div>
                                     </div>
                                     <div class="vc-back-right">
-                                        <img src="second_logo.svg" class="vc-back-logo-national" alt="Armoiries du Cameroun"/>
+                                        <img src="second_logo.svg" class="vc-back-logo-national"
+                                             alt="Armoiries du Cameroun"/>
                                         <div class="vc-ministry-block">
-                                            <div class="vc-ministry-line vc-ministry-line-light vc-ministry-line-top">Ministère des Finances</div>
-                                            <div class="vc-ministry-line vc-ministry-line-light">Secrétariat Général</div>
-                                            <div class="vc-ministry-line vc-ministry-line-light">Direction Générale du Budget</div>
-                                            <div class="vc-ministry-line vc-ministry-line-light">Division de la Réforme Budgétaire</div>
+                                            <div class="vc-ministry-line vc-ministry-line-light vc-ministry-line-top">
+                                                Ministère des Finances
+                                            </div>
+                                            <div class="vc-ministry-line vc-ministry-line-light">Secrétariat Général
+                                            </div>
+                                            <div class="vc-ministry-line vc-ministry-line-light">Direction Générale du
+                                                Budget
+                                            </div>
+                                            <div class="vc-ministry-line vc-ministry-line-light">Division de la Réforme
+                                                Budgétaire
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
