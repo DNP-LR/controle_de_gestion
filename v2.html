@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title content="SID CDG - Brand Concept">DataDriven Mechanical - Brand Concept</title>
+<!-- Tailwind CSS v3 CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts for Bold, Technical, and Rugged Typography -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Outfit:wght@300;400;600;800&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            industrial: {
+              gunmetal: '#1a1d23',
+              orange: '#f97316',
+              steel: '#94a3b8',
+              darker: '#0a0c10',
+            }
+          },
+          fontFamily: {
+            'space': ['"Space Grotesk"', 'sans-serif'],
+            'outfit': ['"Outfit"', 'sans-serif'],
+            'mono': ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-animations">
+    @keyframes piston-move {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .animate-piston-1 { animation: piston-move 3s ease-in-out infinite; }
+    .animate-piston-2 { animation: piston-move 3s ease-in-out infinite 0.5s; }
+    .animate-piston-3 { animation: piston-move 3s ease-in-out infinite 1s; }
+    .animate-piston-4 { animation: piston-move 3s ease-in-out infinite 1.5s; }
+
+    .metallic-gradient {
+      background: linear-gradient(145deg, #475569 0%, #1e293b 100%);
+      box-shadow: inset 1px 1px 0px rgba(255,255,255,0.1);
+    }
+  </style>
+<style data-purpose="layout-styles">
+    body {
+      background-color: #05070a;
+      color: #e2e8f0;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .card-glow {
+      box-shadow: 0 0 50px -12px rgba(249, 115, 22, 0.15);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4">
+<!-- BEGIN: Main Brand Presentation Card -->
+<main class="w-full max-w-5xl aspect-[16/10] bg-industrial-darker rounded-[40px] border border-industrial-steel/10 flex flex-col items-center justify-center relative overflow-hidden card-glow">
+<!-- Background Subtle Textures -->
+<div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(#94a3b8 1px, transparent 1px); background-size: 30px 30px;"></div>
+<div class="absolute inset-0 bg-gradient-to-tr from-industrial-orange/5 via-transparent to-transparent"></div>
+<!-- BEGIN: Industrial Logo Icon -->
+<div class="flex items-end gap-3 mb-12" data-purpose="mechanical-logo-icon">
+<!-- Piston 1 -->
+<div class="w-10 h-24 metallic-gradient rounded-t-lg border-x border-t border-industrial-steel/30 relative flex flex-col items-center animate-piston-1">
+<div class="w-full h-2 bg-industrial-orange absolute top-4 opacity-80"></div>
+<div class="w-6 h-1 bg-industrial-steel/20 mt-10 rounded-full"></div>
+</div>
+<!-- Piston 2 -->
+<div class="w-10 h-40 metallic-gradient rounded-t-lg border-x border-t border-industrial-steel/30 relative flex flex-col items-center animate-piston-2">
+<div class="w-full h-2 bg-industrial-orange absolute top-4 opacity-80"></div>
+<div class="w-6 h-1 bg-industrial-steel/20 mt-10 rounded-full"></div>
+<div class="w-6 h-1 bg-industrial-steel/20 mt-4 rounded-full"></div>
+</div>
+<!-- Piston 3 -->
+<div class="w-10 h-32 metallic-gradient rounded-t-lg border-x border-t border-industrial-steel/30 relative flex flex-col items-center animate-piston-3">
+<div class="w-full h-2 bg-industrial-orange absolute top-4 opacity-80"></div>
+<div class="w-6 h-1 bg-industrial-steel/20 mt-10 rounded-full"></div>
+</div>
+<!-- Piston 4 (Tallest) -->
+<div class="w-10 h-52 metallic-gradient rounded-t-lg border-x border-t border-industrial-steel/30 relative flex flex-col items-center animate-piston-4">
+<div class="w-full h-2 bg-industrial-orange absolute top-4 shadow-[0_0_15px_rgba(249,115,22,0.8)]"></div>
+<div class="w-6 h-1 bg-industrial-steel/20 mt-10 rounded-full"></div>
+<div class="w-6 h-1 bg-industrial-steel/20 mt-4 rounded-full"></div>
+<div class="w-6 h-1 bg-industrial-steel/20 mt-4 rounded-full"></div>
+<!-- Light flare at top -->
+<div class="absolute -top-4 w-12 h-12 bg-industrial-orange/20 blur-xl rounded-full"></div>
+</div>
+</div>
+<!-- END: Industrial Logo Icon -->
+<!-- BEGIN: Brand Typography -->
+<div class="text-center z-10">
+<h1 class="text-7xl font-outfit font-extrabold tracking-tighter flex items-center justify-center">
+<span class="text-white">SID</span>
+<span class="text-industrial-orange ml-1">CDG</span>
+</h1>
+<div class="flex items-center justify-center gap-4 mt-4">
+<div class="h-[1px] w-12 bg-industrial-steel/30"></div>
+<span class="font-mono text-xs uppercase tracking-[0.4em] text-industrial-steel">System Integrated Design / CDG</span>
+<div class="h-[1px] w-12 bg-industrial-steel/30"></div>
+</div>
+<p class="mt-8 italic text-industrial-steel/60 font-light tracking-wide text-sm">Advanced mechanical logic through integrated system design.</p>
+</div>
+<!-- END: Brand Typography -->
+</main>
+<!-- END: Main Brand Presentation Card -->
+<!-- BEGIN: Metadata Footer -->
+<footer class="w-full max-w-5xl mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 px-8">
+<div data-purpose="concept-info">
+<h3 class="text-[10px] uppercase tracking-[0.2em] text-industrial-steel/50 font-bold mb-2">Concept</h3>
+<p class="text-xs font-mono text-industrial-steel uppercase">Industrial Tech / Mechanical Data</p>
+</div>
+<div class="flex flex-col md:items-center" data-purpose="palette-info">
+<h3 class="text-[10px] uppercase tracking-[0.2em] text-industrial-steel/50 font-bold mb-2">Palette</h3>
+<div class="flex gap-2">
+<div class="w-4 h-4 rounded-full bg-industrial-gunmetal border border-industrial-steel/20" title="Gunmetal Gray"></div>
+<div class="w-4 h-4 rounded-full bg-industrial-orange" title="Industrial Orange"></div>
+<div class="w-4 h-4 rounded-full bg-industrial-steel" title="Brushed Steel"></div>
+</div>
+</div>
+<div class="md:text-right" data-purpose="typography-info">
+<h3 class="text-[10px] uppercase tracking-[0.2em] text-industrial-steel/50 font-bold mb-2">Typography</h3>
+<p class="text-xs font-mono text-industrial-steel uppercase">Outfit / Space Grotesk / Mono</p>
+</div>
+</footer>
+<!-- END: Metadata Footer -->
+</body></html>

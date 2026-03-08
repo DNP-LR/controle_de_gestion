@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SID CDG — Brand Concept</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --ink:      #12181A;
+  --navy:     #1A3A4A;
+  --blue:     #2A5C6E;
+  --mid:      #4A9BAD;
+  --steel:    #85B5C2;
+  --silver:   #B8D8E2;
+  --mist:     #E4F2F6;
+  --white:    #F2F9FC;
+  --gold:     #E2B84A;
+  --gold-lt:  #F0D070;
+  --gold-dk:  #B8881A;
+  --serif:    'Playfair Display', Georgia, serif;
+  --sans:     'Inter', system-ui, sans-serif;
+  --mono:     'Courier Prime', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #08100f; }
+
+body {
+  min-height: 100vh;
+  background: #08100f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── MAIN CARD ── */
+.card {
+  width: 100%;
+  max-width: 960px;
+  aspect-ratio: 16 / 10;
+  background: var(--ink);
+  border-radius: 32px;
+  border: 1px solid rgba(133,181,194,0.1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 0 80px -20px rgba(74,155,173,0.18),
+    0 0 0 1px rgba(226,184,74,0.06);
+}
+
+/* Background layers */
+.bg-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(133,181,194,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(133,181,194,0.025) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.bg-radial {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 90% 60% at 50% 30%, rgba(26,58,74,0.55) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 40% at 80% 85%, rgba(226,184,74,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 10% 80%, rgba(42,92,110,0.12) 0%, transparent 60%);
+}
+
+.bg-vignette {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 130% 130% at 50% 50%, transparent 40%, rgba(8,16,15,0.85) 100%);
+}
+
+/* Gold corner accents */
+.corner {
+  position: absolute;
+  width: 40px; height: 40px;
+  border-color: rgba(226,184,74,0.3);
+  border-style: solid;
+}
+.corner-tl { top: 28px; left: 28px; border-width: 1px 0 0 1px; }
+.corner-tr { top: 28px; right: 28px; border-width: 1px 1px 0 0; }
+.corner-bl { bottom: 28px; left: 28px; border-width: 0 0 1px 1px; }
+.corner-br { bottom: 28px; right: 28px; border-width: 0 1px 1px 0; }
+
+/* ── CONTENT ── */
+.inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  text-align: center;
+}
+
+/* ── LOGO MARK ── */
+.logo-mark {
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeUp 0.9s ease both;
+}
+
+/* Scales / balance SVG — custom drawn */
+.scale-svg { filter: drop-shadow(0 0 18px rgba(226,184,74,0.3)); }
+
+/* ── WORDMARK ── */
+.wordmark {
+  font-family: var(--serif);
+  font-size: clamp(52px, 7vw, 88px);
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  color: var(--white);
+  line-height: 1;
+  animation: fadeUp 0.9s 0.15s ease both;
+}
+.wordmark .accent { color: var(--gold); }
+
+/* ── GOLD RULE ── */
+.rule-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 18px 0 16px;
+  animation: scaleIn 0.9s 0.3s ease both;
+}
+.rule-line {
+  height: 1px;
+  width: 60px;
+  background: linear-gradient(to right, transparent, var(--gold-dk), var(--gold));
+}
+.rule-line.rev { background: linear-gradient(to left, transparent, var(--gold-dk), var(--gold)); }
+.rule-diamond {
+  width: 6px; height: 6px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+/* ── DESCRIPTOR ── */
+.descriptor {
+  font-size: clamp(8px, 1vw, 10px);
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--steel);
+  font-family: var(--mono);
+  animation: fadeUp 0.9s 0.4s ease both;
+}
+
+/* ── TAGLINE ── */
+.tagline {
+  margin-top: 20px;
+  font-family: var(--serif);
+  font-size: clamp(13px, 1.6vw, 18px);
+  font-style: italic;
+  color: rgba(133,181,194,0.55);
+  letter-spacing: 0.04em;
+  font-weight: 400;
+  animation: fadeUp 0.9s 0.55s ease both;
+}
+.tagline em { font-style: normal; color: rgba(226,184,74,0.65); }
+
+/* ── FOOTER STRIP ── */
+.footer {
+  width: 100%;
+  max-width: 960px;
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0 2px;
+  background: rgba(133,181,194,0.05);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(133,181,194,0.08);
+  animation: fadeUp 0.9s 0.7s ease both;
+}
+
+.footer-cell {
+  background: var(--ink);
+  padding: 20px 24px;
+}
+.footer-label {
+  font-size: 9px;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-family: var(--mono);
+  margin-bottom: 8px;
+}
+.footer-value {
+  font-size: 11px;
+  color: var(--steel);
+  letter-spacing: 0.06em;
+}
+.footer-swatches {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 2px;
+}
+.swatch {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.1);
+  flex-shrink: 0;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scaleX(0.3); }
+  to   { opacity: 1; transform: scaleX(1); }
+}
+
+/* Scales arm gentle sway */
+@keyframes sway {
+  0%, 100% { transform: rotate(0deg); }
+  30%       { transform: rotate(2.5deg); }
+  70%       { transform: rotate(-2.5deg); }
+}
+.scale-arm { animation: sway 5s ease-in-out infinite; transform-origin: center 28px; }
+
+@keyframes swayL {
+  0%, 100% { transform: translateY(0); }
+  30%       { transform: translateY(-5px); }
+  70%       { transform: translateY(5px); }
+}
+@keyframes swayR {
+  0%, 100% { transform: translateY(0); }
+  30%       { transform: translateY(5px); }
+  70%       { transform: translateY(-5px); }
+}
+.pan-l { animation: swayL 5s ease-in-out infinite; }
+.pan-r { animation: swayR 5s ease-in-out infinite; }
+</style>
+</head>
+<body>
+
+<!-- ── MAIN CARD ── -->
+<main class="card">
+  <div class="bg-grid"></div>
+  <div class="bg-radial"></div>
+  <div class="bg-vignette"></div>
+
+  <!-- Corner ornaments -->
+  <div class="corner corner-tl"></div>
+  <div class="corner corner-tr"></div>
+  <div class="corner corner-bl"></div>
+  <div class="corner corner-br"></div>
+
+  <div class="inner">
+
+    <!-- Scales logo mark -->
+    <div class="logo-mark">
+      <svg class="scale-svg" width="100" height="90" viewBox="0 0 100 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Pillar base -->
+        <rect x="47.5" y="72" width="5" height="14" fill="#E2B84A" rx="1" opacity="0.8"/>
+        <!-- Base platform -->
+        <rect x="34" y="84" width="32" height="4" rx="2" fill="#E2B84A" opacity="0.5"/>
+
+        <!-- Main vertical pole -->
+        <line x1="50" y1="18" x2="50" y2="72" stroke="#85B5C2" stroke-width="1.5" stroke-linecap="round"/>
+
+        <!-- Top finial -->
+        <circle cx="50" cy="14" r="4" fill="none" stroke="#E2B84A" stroke-width="1.5"/>
+        <circle cx="50" cy="14" r="1.5" fill="#E2B84A"/>
+
+        <!-- Balance arm (animated) -->
+        <g class="scale-arm">
+          <!-- Arm beam -->
+          <line x1="14" y1="28" x2="86" y2="28" stroke="#E2B84A" stroke-width="1.8" stroke-linecap="round"/>
+
+          <!-- Left chain -->
+          <g class="pan-l">
+            <line x1="18" y1="28" x2="18" y2="54" stroke="#85B5C2" stroke-width="1" stroke-dasharray="2 2"/>
+            <!-- Left pan -->
+            <path d="M8 54 Q18 58 28 54" stroke="#E2B84A" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            <line x1="8" y1="54" x2="8" y2="56" stroke="#85B5C2" stroke-width="1"/>
+            <line x1="28" y1="54" x2="28" y2="56" stroke="#85B5C2" stroke-width="1"/>
+            <!-- Small dot on left pan: data point -->
+            <circle cx="18" cy="56" r="1.5" fill="#4A9BAD" opacity="0.8"/>
+          </g>
+
+          <!-- Right chain -->
+          <g class="pan-r">
+            <line x1="82" y1="28" x2="82" y2="54" stroke="#85B5C2" stroke-width="1" stroke-dasharray="2 2"/>
+            <!-- Right pan -->
+            <path d="M72 54 Q82 58 92 54" stroke="#E2B84A" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            <line x1="72" y1="54" x2="72" y2="56" stroke="#85B5C2" stroke-width="1"/>
+            <line x1="92" y1="54" x2="92" y2="56" stroke="#85B5C2" stroke-width="1"/>
+            <!-- Small dot on right pan: data point -->
+            <circle cx="82" cy="56" r="1.5" fill="#4A9BAD" opacity="0.8"/>
+          </g>
+
+          <!-- Pivot circle at center top -->
+          <circle cx="50" cy="28" r="3" fill="#12181A" stroke="#E2B84A" stroke-width="1.5"/>
+        </g>
+
+        <!-- Subtle data graph at base of pole -->
+        <polyline points="38,70 41,65 44,68 47,62 50,64 53,60 56,63 59,67 62,70"
+          stroke="#4A9BAD" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+      </svg>
+    </div>
+
+    <!-- Wordmark -->
+    <h1 class="wordmark">SID <span class="accent">CDG</span></h1>
+
+    <!-- Ornamental rule -->
+    <div class="rule-wrap">
+      <div class="rule-line rev"></div>
+      <div class="rule-diamond"></div>
+      <div class="rule-line"></div>
+    </div>
+
+    <!-- Descriptor -->
+    <p class="descriptor">Conseils Juridiques &amp; Financiers · Contrôle de Gestion</p>
+
+    <!-- Tagline -->
+    <p class="tagline">« L'<em>Équilibre</em> de la Performance Publique »</p>
+  </div>
+</main>
+
+<!-- ── FOOTER META ── -->
+<footer class="footer">
+  <div class="footer-cell">
+    <div class="footer-label">Concept</div>
+    <div class="footer-value">Performance Publique · Équilibre &amp; Contrôle</div>
+  </div>
+  <div class="footer-cell" style="text-align:center">
+    <div class="footer-label">Palette</div>
+    <div class="footer-swatches" style="justify-content:center">
+      <div class="swatch" style="background:#12181A" title="Ink"></div>
+      <div class="swatch" style="background:#1A3A4A" title="Navy"></div>
+      <div class="swatch" style="background:#4A9BAD" title="Teal Mid"></div>
+      <div class="swatch" style="background:#85B5C2" title="Steel"></div>
+      <div class="swatch" style="background:#E2B84A" title="Gold"></div>
+    </div>
+  </div>
+  <div class="footer-cell" style="text-align:right">
+    <div class="footer-label">Typographie</div>
+    <div class="footer-value">Playfair Display · Inter · Courier Prime</div>
+  </div>
+</footer>
+
+</body>
+</html>
