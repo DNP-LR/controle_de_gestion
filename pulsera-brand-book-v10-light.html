@@ -1227,8 +1227,19 @@
             gap: 4px;
             min-width: 88px;
             padding: 0 0 0 10px;
-            border-left: 1px solid rgba(226, 184, 74, 0.12);
             transform: translateY(-4px);
+            position: relative;
+        }
+
+        .sid-card-showcase .institution-side::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 1px;
+            height: 42px;
+            background: rgba(226, 184, 74, 0.12);
+            transform: translateY(-50%);
         }
 
         .sid-card-showcase .logo-national {
