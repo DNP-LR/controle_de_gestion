@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contrôle de Gestion — Brand Identity Book v10</title>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root {
   /* Industrial dark tones — Contrôle de Gestion */
@@ -841,6 +842,307 @@ body {
   margin-bottom: 48px;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.sid-card-showcase {
+  --sid-ink: var(--ink);
+  --sid-navy: var(--navy);
+  --sid-blue: var(--blue);
+  --sid-mid: var(--mid);
+  --sid-steel: var(--steel);
+  --sid-silver: var(--silver);
+  --sid-mist: var(--mist);
+  --sid-white: var(--white);
+  --sid-gold: var(--gold);
+  --sid-gold-lt: var(--gold-lt);
+  --sid-gold-dk: var(--gold-dk);
+  --sid-serif: 'Playfair Display', Georgia, serif;
+  --sid-sans: 'Inter', system-ui, sans-serif;
+  --sid-mono: 'Courier Prime', monospace;
+  color: var(--sid-white);
+  font-family: var(--sid-sans);
+  border-radius: 0;
+  padding: 0;
+  margin-bottom: 48px;
+  box-shadow: none;
+}
+
+.sid-card-showcase *,
+.sid-card-showcase *::before,
+.sid-card-showcase *::after {
+  box-sizing: border-box;
+}
+
+.sid-card-showcase .bcard-wrap {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.sid-card-showcase .bcard {
+  width: 420px;
+  height: 240px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 32px 64px rgba(0,0,0,0.6),
+    0 0 0 1px rgba(133,181,194,0.08);
+}
+
+.sid-card-showcase .bcard-front {
+  background: linear-gradient(135deg, var(--sid-navy) 0%, var(--sid-ink) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 28px 32px;
+}
+
+.sid-card-showcase .bcard-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(133,181,194,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(133,181,194,0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+.sid-card-showcase .bcard-accent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, var(--sid-gold-lt), var(--sid-gold), var(--sid-gold-dk));
+}
+
+.sid-card-showcase .bcard-glow {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(148,163,184,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.sid-card-showcase .header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
+}
+
+.sid-card-showcase .brand-side {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sid-card-showcase .brand-wm {
+  font-family: var(--sid-serif);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--sid-white);
+  line-height: 1.25;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+}
+
+.sid-card-showcase .brand-wm span {
+  color: var(--sid-gold);
+}
+
+.sid-card-showcase .brand-sub {
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(242,249,252,0.8);
+  margin-top: 3px;
+  font-family: var(--sid-mono);
+}
+
+.sid-card-showcase .person-info {
+  position: relative;
+  z-index: 2;
+}
+
+.sid-card-showcase .bcard-person-name {
+  font-family: var(--sid-serif);
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--sid-white);
+  line-height: 1.1;
+}
+
+.sid-card-showcase .bcard-title {
+  font-size: 8.5px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--sid-gold);
+  margin-top: 6px;
+  font-family: var(--sid-mono);
+}
+
+.sid-card-showcase .bcard-contact {
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid rgba(133,181,194,0.1);
+  padding-top: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  font-family: var(--sid-mono);
+  font-size: 8px;
+  color: var(--sid-steel);
+  letter-spacing: 0.03em;
+  line-height: 1.9;
+}
+
+.sid-card-showcase .bcard-contact .right {
+  text-align: right;
+}
+
+.sid-card-showcase .bcard-back {
+  background: var(--sid-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  border: 1px solid rgba(133,181,194,0.07);
+}
+
+.sid-card-showcase .back-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(226,184,74,0.03),
+    rgba(226,184,74,0.03) 1px,
+    transparent 1px,
+    transparent 18px
+  );
+}
+
+.sid-card-showcase .back-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(133,181,194,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(133,181,194,0.025) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.sid-card-showcase .back-left {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 0 40px;
+  border-right: 1px solid rgba(226,184,74,0.15);
+}
+
+.sid-card-showcase .back-wordmark {
+  font-family: var(--sid-serif);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  color: var(--sid-white);
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+}
+
+.sid-card-showcase .back-wordmark span {
+  color: var(--sid-gold);
+}
+
+.sid-card-showcase .back-tagline {
+  font-family: var(--sid-mono);
+  font-size: 7px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(242,249,252,0.68);
+  text-align: center;
+  line-height: 1.7;
+}
+
+.sid-card-showcase .logo-national {
+  height: 48px;
+  width: auto;
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 1px 4px rgba(0,0,0,0.35)) contrast(1.08) brightness(1.04);
+}
+
+.sid-card-showcase .back-logo-national {
+  height: 76px;
+  width: auto;
+  mix-blend-mode: screen;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.35)) contrast(1.08) brightness(1.04);
+}
+
+.sid-card-showcase .ministry-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  max-width: 145px;
+}
+
+.sid-card-showcase .ministry-line {
+  font-family: var(--sid-mono);
+  font-size: 6.5px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(242,249,252,0.82);
+  line-height: 1.45;
+  text-align: left;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+}
+
+.sid-card-showcase .ministry-line.top {
+  font-size: 7.5px;
+  color: var(--sid-gold);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.sid-card-showcase .back-corner {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-color: rgba(226,184,74,0.2);
+  border-style: solid;
+}
+
+.sid-card-showcase .bc-tl { top: 14px; left: 14px; border-width: 1px 0 0 1px; }
+.sid-card-showcase .bc-tr { top: 14px; right: 14px; border-width: 1px 1px 0 0; }
+.sid-card-showcase .bc-bl { bottom: 14px; left: 14px; border-width: 0 0 1px 1px; }
+.sid-card-showcase .bc-br { bottom: 14px; right: 14px; border-width: 0 1px 1px 0; }
+
+.sid-card-showcase .spec-note {
+  font-family: var(--sid-mono);
+  font-size: 9px;
+  color: rgba(133,181,194,0.3);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .sid-card-showcase .bcard {
+    width: 100%;
+    max-width: 420px;
+  }
 }
 
 .bcard {
@@ -2538,34 +2840,60 @@ body {
 
   <!-- Business Cards -->
   <div class="sub-label">Business Card</div>
-  <div class="bcard-wrap">
-    <!-- Front -->
-    <div class="bcard bcard-front">
-      <div class="bcard-grid-overlay"></div>
-      <div class="bcard-accent"></div>
-      <div class="bcard-content">
-        <div class="bcard-logo-row">
-          <img src="logo.svg" width="18" height="24" alt="Contrôle de Gestion"/>
-          <div class="bcard-name-wm">Contrôle de <span>Gestion</span></div>
+  <div class="sid-card-showcase">
+    <div class="bcard-wrap">
+      <div class="bcard bcard-front">
+        <div class="bcard-grid-overlay"></div>
+        <div class="bcard-accent"></div>
+        <div class="bcard-glow"></div>
+        <div class="header-row">
+          <div class="brand-side">
+            <img src="logo.svg" width="18" height="24" alt="Contrôle de Gestion">
+            <div>
+              <div class="brand-wm">Contrôle de <span>Gestion</span></div>
+              <div class="brand-sub">Contrôle de Gestion Ministériel</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;">
+            <img src="second_logo.svg" class="logo-national" alt="Armoiries du Cameroun">
+            <div class="ministry-block">
+              <div class="ministry-line top">Ministère des Finances</div>
+              <div class="ministry-line">Secrétariat Général</div>
+              <div class="ministry-line">Direction Générale du Budget</div>
+              <div class="ministry-line">Division de la Réforme Budgétaire</div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="bcard-content">
-        <div class="bcard-person-name">Alexandre Martin</div>
-        <div class="bcard-title">Contrôleur de Gestion Senior</div>
-      </div>
-      <div class="bcard-content">
+        <div class="person-info">
+          <div class="bcard-person-name">Alexandre Martin</div>
+          <div class="bcard-title">Contrôleur de Gestion Senior</div>
+        </div>
         <div class="bcard-contact">
-          <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c9a8e7a4a8bbbda0a789b9bca5baacbba8e7aaa6a4">[email&#160;protected]</a><br>
-          +237 6 55 01 82 00<br>
-          controle-gestion.cm
+          <div>
+            a.martin@controle-gestion.cm<br>
+            +237 6 55 01 82 00
+          </div>
+          <div class="right">
+            Douala, Cameroun<br>
+            www.controle-gestion.cm
+          </div>
         </div>
       </div>
-    </div>
-    <!-- Back -->
-    <div class="bcard bcard-back">
-      <div class="bcard-back-pattern"></div>
-      <div class="bcard-back-logo">
-        <img src="logo.svg" width="43" height="56" alt="Contrôle de Gestion"/>
+      <div class="bcard bcard-back">
+        <div class="back-pattern"></div>
+        <div class="back-grid"></div>
+        <div class="back-corner bc-tl"></div>
+        <div class="back-corner bc-tr"></div>
+        <div class="back-corner bc-bl"></div>
+        <div class="back-corner bc-br"></div>
+        <div class="back-left">
+          <div class="back-wordmark">Contrôle de <span>Gestion</span></div>
+          <div class="back-tagline">
+            Contrôle de Gestion Ministériel<br>
+            Cameroun
+          </div>
+        </div>
+        <img src="second_logo.svg" class="back-logo-national" alt="Armoiries du Cameroun">
       </div>
     </div>
   </div>
@@ -6301,34 +6629,60 @@ body {
 
   <!-- Business Cards -->
   <div class="sub-label">Business Card</div>
-  <div class="bcard-wrap">
-    <!-- Front -->
-    <div class="bcard bcard-front">
-      <div class="bcard-grid-overlay"></div>
-      <div class="bcard-accent"></div>
-      <div class="bcard-content">
-        <div class="bcard-logo-row">
-          <img src="logo.svg" width="18" height="24" alt="Contrôle de Gestion"/>
-          <div class="bcard-name-wm">Contrôle de <span>Gestion</span></div>
+  <div class="sid-card-showcase">
+    <div class="bcard-wrap">
+      <div class="bcard bcard-front">
+        <div class="bcard-grid-overlay"></div>
+        <div class="bcard-accent"></div>
+        <div class="bcard-glow"></div>
+        <div class="header-row">
+          <div class="brand-side">
+            <img src="logo.svg" width="18" height="24" alt="Contrôle de Gestion">
+            <div>
+              <div class="brand-wm">Contrôle de <span>Gestion</span></div>
+              <div class="brand-sub">Contrôle de Gestion Ministériel</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;">
+            <img src="cameroun-armoiries.png" class="logo-national" alt="Armoiries du Cameroun">
+            <div class="ministry-block">
+              <div class="ministry-line top">Ministère des Finances</div>
+              <div class="ministry-line">Secrétariat Général</div>
+              <div class="ministry-line">Direction Générale du Budget</div>
+              <div class="ministry-line">Division de la Réforme Budgétaire</div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="bcard-content">
-        <div class="bcard-person-name">Alexandre Martin</div>
-        <div class="bcard-title">Contrôleur de Gestion Senior</div>
-      </div>
-      <div class="bcard-content">
+        <div class="person-info">
+          <div class="bcard-person-name">Alexandre Martin</div>
+          <div class="bcard-title">Contrôleur de Gestion Senior</div>
+        </div>
         <div class="bcard-contact">
-          <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c9a8e7a4a8bbbda0a789b9bca5baacbba8e7aaa6a4">[email&#160;protected]</a><br>
-          +237 6 55 01 82 00<br>
-          controle-gestion.cm
+          <div>
+            a.martin@controle-gestion.cm<br>
+            +237 6 55 01 82 00
+          </div>
+          <div class="right">
+            Douala, Cameroun<br>
+            www.controle-gestion.cm
+          </div>
         </div>
       </div>
-    </div>
-    <!-- Back -->
-    <div class="bcard bcard-back">
-      <div class="bcard-back-pattern"></div>
-      <div class="bcard-back-logo">
-        <img src="logo.svg" width="43" height="56" alt="Contrôle de Gestion"/>
+      <div class="bcard bcard-back">
+        <div class="back-pattern"></div>
+        <div class="back-grid"></div>
+        <div class="back-corner bc-tl"></div>
+        <div class="back-corner bc-tr"></div>
+        <div class="back-corner bc-bl"></div>
+        <div class="back-corner bc-br"></div>
+        <div class="back-left">
+          <div class="back-wordmark">Contrôle de <span>Gestion</span></div>
+          <div class="back-tagline">
+            Contrôle de Gestion Ministériel<br>
+            Cameroun
+          </div>
+        </div>
+        <img src="cameroun-armoiries.png" class="back-logo-national" alt="Armoiries du Cameroun">
       </div>
     </div>
   </div>
